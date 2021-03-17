@@ -34,7 +34,7 @@ namespace WPFGOL3
                     btnArr[i, c].Tag = 0;
                     btnArr[i, c].Content = btnArr[i,c].Tag;
                     btnArr[i, c].Name = "Button" + i.ToString() + c.ToString();
-                    Grid.SetColumn(btnArr[i, c], c);
+                    Grid.SetColumn(btnArr[i, c], c + 1);
                     Grid.SetRow(btnArr[i, c], i + 1);
                     gridMain.Children.Add(btnArr[i, c]);
                 }

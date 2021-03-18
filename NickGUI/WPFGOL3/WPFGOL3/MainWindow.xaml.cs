@@ -44,6 +44,7 @@ namespace WPFGOL3
                     int x = Grid.GetColumn(btnArr[columni, rowi]);
                     btnArr[columni, rowi].Tag = 0;
                     btnArr[columni, rowi].Content = btnArr[columni,rowi].Tag;
+                    btnArr[columni, rowi].Background = Brushes.Silver;
                     btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
                     
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
@@ -81,7 +82,7 @@ namespace WPFGOL3
 
 
 
-            btnArr[y - 1, x - 1].Background = Brushes.Red;
+            btnArr[y - 1, x - 1].Background = Brushes.Crimson;
             btnArr[y - 1, x - 1].Content = 1;
             //return Tuple.Create(x, y);
             
@@ -106,7 +107,7 @@ namespace WPFGOL3
                 for (rowi = 0; rowi < 20; rowi++)
                 {
                     btnArr[rowi, columni].Content = 0;
-                    btnArr[rowi, columni].Background = Brushes.LightGray;
+                    btnArr[rowi, columni].Background = Brushes.Silver;
                 }
             }
 

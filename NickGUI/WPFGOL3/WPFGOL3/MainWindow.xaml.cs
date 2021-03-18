@@ -98,5 +98,18 @@ namespace WPFGOL3
 
             btnArr[y + 1, x + 1].Content = 1;
         }
+        private void reset(object sender, RoutedEventArgs e)
+        {
+            //Console.WriteLine("Fuckin shitty");
+            for (columni = 0; columni < 20; columni++)
+            {
+                for (rowi = 0; rowi < 20; rowi++)
+                {
+                    btnArr[rowi, columni].Content = 0;
+                    btnArr[rowi, columni].Background = Brushes.LightGray;
+                }
+            }
+
+        }
     }
 }

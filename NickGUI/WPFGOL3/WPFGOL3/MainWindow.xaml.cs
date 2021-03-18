@@ -70,7 +70,7 @@ namespace WPFGOL3
         {
             this.Close();
         }
-        private void setState (object sender, RoutedEventArgs e)
+        private /*Tuple<int,int>*/ void setState (object sender, RoutedEventArgs e)
         {
 
             Button _btn = sender as Button;
@@ -83,6 +83,20 @@ namespace WPFGOL3
 
 
             btnArr[y - 1, x - 1].Content = 1;
+            //return Tuple.Create(x, y);
+            
+            
+        }
+        private void generate(object sender, RoutedEventArgs e)
+        {
+            Button _btn = sender as Button;
+            int y = (int)_btn.GetValue(Grid.RowProperty);
+            int x = (int)_btn.GetValue(Grid.ColumnProperty);
+
+
+            Console.WriteLine($"{x},{y}");
+
+            btnArr[y + 1, x + 1].Content = 1;
         }
     }
 }

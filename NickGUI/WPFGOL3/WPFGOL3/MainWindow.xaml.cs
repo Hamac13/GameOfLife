@@ -81,7 +81,7 @@ namespace WPFGOL3
 
 
 
-
+            btnArr[y - 1, x - 1].Background = Brushes.Red;
             btnArr[y - 1, x - 1].Content = 1;
             //return Tuple.Create(x, y);
             

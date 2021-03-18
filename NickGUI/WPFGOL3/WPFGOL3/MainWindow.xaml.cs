@@ -98,5 +98,11 @@ namespace WPFGOL3
 
             btnArr[y + 1, x + 1].Content = 1;
         }
+        private void reset(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Fuckin shitty");
+
+
+        }
     }
 }

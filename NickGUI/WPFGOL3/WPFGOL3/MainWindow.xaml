@@ -56,7 +56,8 @@
 			<ColumnDefinition Width="*"/>
             
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0">E</TextBlock>
+        <TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>
+        <Button x:Name="test" Grid.Column="21" Content="Exit" Click="closeWindow"></Button>
     </Grid>
     
 </Window>

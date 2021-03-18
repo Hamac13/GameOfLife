@@ -20,25 +20,69 @@ namespace WPFGOL3
     /// </summary>
     public partial class MainWindow : Window
     {
+        static int column = 20;
+        static int row = 20;
+
+        //Button[,] btnArr = new Button[rows, columns];
+        Button[,] btnArr = new Button[row, column];
+        int rowi;
+        int columni;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            Button[,] btnArr = new Button[20, 20];
+            //Button[,] btnArr = new Button[20, 20];
+            
 
-            for (int i = 0; i < 20; i++)
+            for (columni = 0; columni < column; columni++)
             {
-                for (int c = 0; c < 20; c++)
+                for (rowi = 0; rowi < row; rowi++)
                 {
-                    btnArr[i, c] = new Button();
-                    btnArr[i, c].Tag = 0;
-                    btnArr[i, c].Content = btnArr[i,c].Tag;
-                    btnArr[i, c].Name = "Button" + i.ToString() + c.ToString();
-                    Grid.SetColumn(btnArr[i, c], c + 1);
-                    Grid.SetRow(btnArr[i, c], i + 1);
-                    gridMain.Children.Add(btnArr[i, c]);
+                    btnArr[columni, rowi] = new Button();
+                    int y = Grid.GetRow(btnArr[columni, rowi]);
+                    int x = Grid.GetColumn(btnArr[columni, rowi]);
+                    btnArr[columni, rowi].Tag = 0;
+                    btnArr[columni, rowi].Content = btnArr[columni,rowi].Tag;
+                    btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
+                    
+                    Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
+                    Grid.SetRow(btnArr[columni, rowi], columni + 1);
+                    gridMain.Children.Add(btnArr[columni, rowi]);
+                    btnArr[columni, rowi].Click += setState;
+                    
+                    //Console.WriteLine($"{x},{y}");
+
                 }
             }
+            
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    for (int c = 0; c < 20; c++)
+            //    {
+
+
+
+            //    }
+            //}
+        }
+        private void closeWindow (object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void setState (object sender, RoutedEventArgs e)
+        {
+
+            Button _btn = sender as Button;
+
+            int y = (int)_btn.GetValue(Grid.RowProperty);
+            int x = (int)_btn.GetValue(Grid.ColumnProperty);
+            Console.WriteLine($"{x},{y}");
+
+
+
+
+            btnArr[y - 1, x - 1].Content = 1;
         }
     }
 }

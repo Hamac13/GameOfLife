@@ -8,7 +8,7 @@
         Title="Game of Life" Height="600" Width="800">
     <Grid Name="gridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -53,7 +53,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="2*"/>
             
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->

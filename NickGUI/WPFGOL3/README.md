@@ -1,4 +1,3 @@
-Game of life GUI
+# GameOfLife
 
-
-This is the readme for the GUI version of the game of life
+This is the branch for the GUI version of this project.

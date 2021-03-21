@@ -25,12 +25,18 @@ namespace WPFGOL3
 
         //Button[,] btnArr = new Button[rows, columns];
         Button[,] btnArr = new Button[row, column];
+        
         int rowi;
         int columni;
 
         public MainWindow()
         {
             InitializeComponent();
+            
+            
+            
+
+            
 
             //Button[,] btnArr = new Button[20, 20];
             
@@ -113,4 +119,5 @@ namespace WPFGOL3
 
         }
     }
+    
 }

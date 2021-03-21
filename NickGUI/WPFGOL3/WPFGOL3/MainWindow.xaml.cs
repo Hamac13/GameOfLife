@@ -36,7 +36,7 @@ namespace WPFGOL3
             
             
 
-            
+            GOLlogic.test(GOLlogic.testing);
 
             //Button[,] btnArr = new Button[20, 20];
             
@@ -119,5 +119,14 @@ namespace WPFGOL3
 
         }
     }
+    public class GOLlogic : MainWindow 
+    {
+        public static string testing = "testing";
+        public GOLlogic(){}
+        public static void test(string test)
+        {
+            Console.WriteLine(test);
+        }
     
+    }
 }

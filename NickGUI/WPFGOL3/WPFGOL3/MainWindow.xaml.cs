@@ -18,6 +18,7 @@ namespace WPFGOL3
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         static int column = 20;
@@ -35,8 +36,6 @@ namespace WPFGOL3
             
             
             
-
-            GOLlogic.test(GOLlogic.testing);
 
             //Button[,] btnArr = new Button[20, 20];
             
@@ -56,6 +55,7 @@ namespace WPFGOL3
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
                     Grid.SetRow(btnArr[columni, rowi], columni + 1);
                     gridMain.Children.Add(btnArr[columni, rowi]);
+                    
                     btnArr[columni, rowi].Click += setState;
                     
                     //Console.WriteLine($"{x},{y}");
@@ -119,14 +119,14 @@ namespace WPFGOL3
 
         }
     }
-    public class GOLlogic : MainWindow 
-    {
-        public static string testing = "testing";
-        public GOLlogic(){}
-        public static void test(string test)
-        {
-            Console.WriteLine(test);
-        }
     
-    }
 }
+        
+
+    
+
+
+
+    
+    
+

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFGOL3"
         mc:Ignorable="d"
 		
-        Title="Game of Life" Height="600" Width="800" x:FieldModifier="public">
+        Title="Game of Life" Height="600" Width="800" >
     <Grid Name="gridMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

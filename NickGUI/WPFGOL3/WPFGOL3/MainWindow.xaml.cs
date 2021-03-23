@@ -33,7 +33,7 @@ namespace WPFGOL3
         public MainWindow()
         {
             InitializeComponent();
-            
+
             
             
 
@@ -119,6 +119,16 @@ namespace WPFGOL3
 
         }
     }
+    public class GOLlogic 
+    { 
+        public GOLlogic() { }
+        
+        public static void test(string test) 
+        {
+            
+        }
+    }
+
     
 }
         

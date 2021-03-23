@@ -21,20 +21,28 @@ namespace WPFGOL3
     
     public partial class MainWindow : Window
     {
-        static int column = 20;
-        static int row = 20;
+        public static int column = 20;
+        public static int row = 20;
 
         //Button[,] btnArr = new Button[rows, columns];
-        Button[,] btnArr = new Button[row, column];
+        public static Button[,] btnArr = new Button[row, column];
+        public static int[,] updateGrid = new int[row, column];
         
-        int rowi;
-        int columni;
+        public static int rowi;
+        public static int columni;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            
+            for (columni = 0; columni < column; columni++)
+            {
+                for (rowi = 0; rowi < row; rowi++)
+                {
+                    
+                    updateGrid[rowi, columni] = 0;
+                }
+            }
             
 
             //Button[,] btnArr = new Button[20, 20];
@@ -62,6 +70,7 @@ namespace WPFGOL3
 
                 }
             }
+
             
             //for (int i = 0; i < 20; i++)
             //{
@@ -90,20 +99,43 @@ namespace WPFGOL3
 
             btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
             btnArr[y - 1, x - 1].Content = 1;
+            updateGrid[y-1,x-1] = 1;
+            btnArr[y - 1, x - 1].Tag = 1;
+
             //return Tuple.Create(x, y);
             
             
         }
         private void generate(object sender, RoutedEventArgs e)
         {
-            Button _btn = sender as Button;
-            int y = (int)_btn.GetValue(Grid.RowProperty);
-            int x = (int)_btn.GetValue(Grid.ColumnProperty);
+            GOLlogic.check();
+
+            
+
+            GOLlogic.Iteration();
+
+            for (int i = 0; i < 20; i++)
+            {
+                for (int c = 0; c < 20; c++)
+                {
+
+                    btnArr[i,c].Tag = updateGrid[i,c];
+                    btnArr[i,c].Content = btnArr[i,c].Tag;
+                    
+
+                }
+            }
+
+            //Button _btn = sender as Button;
+            //int y = (int)_btn.GetValue(Grid.RowProperty);
+            //int x = (int)_btn.GetValue(Grid.ColumnProperty);
 
 
-            Console.WriteLine($"{x},{y}");
-            btnArr[y + 1, x + 1].Background = Brushes.Firebrick;
-            btnArr[y + 1, x + 1].Content = 1;
+            //Console.WriteLine($"{x},{y}");
+            //btnArr[y + 1, x + 1].Background = Brushes.Firebrick;
+            //btnArr[y + 1, x + 1].Content = 1;
+
+            
         }
         private void reset(object sender, RoutedEventArgs e)
         {
@@ -114,19 +146,87 @@ namespace WPFGOL3
                 {
                     btnArr[rowi, columni].Content = 0;
                     btnArr[rowi, columni].Background = Brushes.SteelBlue;
+                    updateGrid[rowi,columni] = 0;
                 }
             }
-
+            
         }
     }
     public class GOLlogic 
     { 
         public GOLlogic() { }
-        
-        public static void test(string test) 
+        public static void check()
         {
             
+            int i1 = -1;
+            int c1 = -1;
+            int i2 = 1;
+            int c2 = 1;
+           
+            for (int ri = 0; ri < MainWindow.row; ri++)
+            {
+                for (int ci = 0; ci < MainWindow.column; ci++)
+                {
+                    if (ri == 0)
+                    {
+                        i1 = 0;
+                    }
+                    if (ci == 0)
+                    {
+                        c1 = 0;
+                    }
+                    if (ri == MainWindow.row - 1)
+                    {
+                        i2 = 0;
+                    }
+                    if (ci == MainWindow.column - 1)
+                    {
+                        c2 = 0;
+                    }
+                    for (int i = i1; i <= i2; i++)
+                    {
+                        for (int c = c1; c <= c2; c++)
+                        {
+                            if (Convert.ToInt32(MainWindow.btnArr[ri + i, ci + c].Tag) > 0)
+                            {
+                                MainWindow.updateGrid[ri, ci]++;
+                                //MainWindow.updateGrid[ri, ci - 1]++;
+                                //MainWindow.updateGrid[ri, ci + 1]++;
+                                //MainWindow.updateGrid[ri+1, ci + 1]++;
+                                //MainWindow.updateGrid[ri + 1, ci]++;
+                                //MainWindow.updateGrid[ri+1, ci - 1]++;
+                            }
+                            
+                        }
+                    }
+                }
+            }
         }
+
+        public static void Iteration()
+        {
+            for (int ci = 0; ci < MainWindow.column; ci++)
+            {
+                for (int ri = 0; ri < MainWindow.row; ri++)
+                {
+                    if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) < 4 )
+                    {
+                        MainWindow.btnArr[ri, ci].Content = 1;
+                        
+                        MainWindow.btnArr[ri,ci].Background = Brushes.Firebrick;
+                        
+                    }
+                    else
+                    {
+                        MainWindow.btnArr[ri, ci].Content = 0;
+                        
+                        
+
+                    }
+                }
+            }
+        }
+        
     }
 
     

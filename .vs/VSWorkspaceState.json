@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NickGUI",
+    "\\NickGUI\\WPFGOL3",
+    "\\NickGUI\\WPFGOL3\\WPFGOL3"
   ],
+  "SelectedNode": "\\NickGUI\\WPFGOL3\\WPFGOL3\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

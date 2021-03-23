@@ -18,6 +18,7 @@ namespace WPFGOL3
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         static int column = 20;
@@ -25,12 +26,16 @@ namespace WPFGOL3
 
         //Button[,] btnArr = new Button[rows, columns];
         Button[,] btnArr = new Button[row, column];
+        
         int rowi;
         int columni;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            
+            
 
             //Button[,] btnArr = new Button[20, 20];
             
@@ -44,12 +49,13 @@ namespace WPFGOL3
                     int x = Grid.GetColumn(btnArr[columni, rowi]);
                     btnArr[columni, rowi].Tag = 0;
                     btnArr[columni, rowi].Content = btnArr[columni,rowi].Tag;
-                    btnArr[columni, rowi].Background = Brushes.Silver;
+                    btnArr[columni, rowi].Background = Brushes.SteelBlue;
                     btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
                     
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
                     Grid.SetRow(btnArr[columni, rowi], columni + 1);
                     gridMain.Children.Add(btnArr[columni, rowi]);
+                    
                     btnArr[columni, rowi].Click += setState;
                     
                     //Console.WriteLine($"{x},{y}");
@@ -82,7 +88,7 @@ namespace WPFGOL3
 
 
 
-            btnArr[y - 1, x - 1].Background = Brushes.Crimson;
+            btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
             btnArr[y - 1, x - 1].Content = 1;
             //return Tuple.Create(x, y);
             
@@ -96,7 +102,7 @@ namespace WPFGOL3
 
 
             Console.WriteLine($"{x},{y}");
-
+            btnArr[y + 1, x + 1].Background = Brushes.Firebrick;
             btnArr[y + 1, x + 1].Content = 1;
         }
         private void reset(object sender, RoutedEventArgs e)
@@ -107,10 +113,30 @@ namespace WPFGOL3
                 for (rowi = 0; rowi < 20; rowi++)
                 {
                     btnArr[rowi, columni].Content = 0;
-                    btnArr[rowi, columni].Background = Brushes.Silver;
+                    btnArr[rowi, columni].Background = Brushes.SteelBlue;
                 }
             }
 
         }
     }
+    public class GOLlogic 
+    { 
+        public GOLlogic() { }
+        
+        public static void test(string test) 
+        {
+            
+        }
+    }
+
+    
 }
+        
+
+    
+
+
+
+    
+    
+

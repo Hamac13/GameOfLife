@@ -11,16 +11,16 @@ C:\Users\h.w.mcleod\Documents\School\Computer Science\GameOfLifeCnsle\GameOfLife
 C:\Users\h.w.mcleod\Documents\School\Computer Science\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.dll
 C:\Users\h.w.mcleod\Documents\School\Computer Science\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.pdb
 C:\Users\h.w.mcleod\Documents\School\Computer Science\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.genruntimeconfig.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.exe
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.deps.json
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.runtimeconfig.json
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.runtimeconfig.dev.json
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.dll
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.pdb
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.csprojAssemblyReference.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.AssemblyInfoInputs.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.AssemblyInfo.cs
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.csproj.CoreCompileInputs.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.dll
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.pdb
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.genruntimeconfig.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.exe
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.deps.json
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.runtimeconfig.json
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.runtimeconfig.dev.json
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.dll
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\bin\Debug\netcoreapp3.1\GameOfLifeCnsle.pdb
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.csprojAssemblyReference.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.AssemblyInfoInputs.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.AssemblyInfo.cs
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.csproj.CoreCompileInputs.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.dll
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.pdb
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\GameOfLifeCnsle\GameOfLifeCnsle\obj\Debug\netcoreapp3.1\GameOfLifeCnsle.genruntimeconfig.cache

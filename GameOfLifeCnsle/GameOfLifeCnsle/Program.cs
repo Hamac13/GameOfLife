@@ -65,7 +65,7 @@ namespace GameOfLifeCnsle
             
         }
 
-                static void check()
+        static void check()
         {
             int i1 = -1;
             int c1 = -1;

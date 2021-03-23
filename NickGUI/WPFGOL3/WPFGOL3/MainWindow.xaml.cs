@@ -99,6 +99,8 @@ namespace WPFGOL3
 
             btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
             btnArr[y - 1, x - 1].Content = 1;
+            updateGrid[y-1,x-1] = 1;
+            btnArr[y - 1, x - 1].Tag = 1;
             //return Tuple.Create(x, y);
             
             

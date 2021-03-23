@@ -21,7 +21,7 @@ namespace GameOfLifeCnsle
             int rowi;
             int columni;
            
-            //int[,] grid = new int[row, column];
+            
 
             for (columni = 0; columni < column; columni++)
             {
@@ -40,7 +40,7 @@ namespace GameOfLifeCnsle
                 x -= 1;
                 y -= 1;
 
-                //grid[x , y + 1] = true;
+                
                 grid[x, y] = 1;
                 Console.WriteLine("end?");
                 string end = Console.ReadLine();
@@ -49,21 +49,13 @@ namespace GameOfLifeCnsle
                     ylj = false;
                 }
             }
-            
-            
-                for (columni = 0; columni < column; columni++)
-                {
-                    for (rowi = 0; rowi < row; rowi++)
-                    {
 
-                        check(rowi, columni);
 
-                    }
-                }
 
-            //PrintGrid(grid);
+
+            check();
             Console.Write("\n");
-            //PrintGrid(updateGrid);
+            
             grid = updateGrid;
             PrintGrid(grid);
             
@@ -73,36 +65,42 @@ namespace GameOfLifeCnsle
             
         }
 
-        static void check(int rowi, int columni)
+                static void check()
         {
             int i1 = -1;
             int c1 = -1;
             int i2 = 1;
             int c2 = 1;
-
-            if (rowi == 0)
+           
+            for (int ri = 0; ri < row; ri++)
             {
-                i1 = 0;
-            }
-            if (columni == 0)
-            {
-                c1 = 0;
-            }
-            if (rowi == row - 1)
-            {
-                i2 = 0;
-            }
-            if (columni == column - 1)
-            {
-                c2 = 0;
-            }           
-            for (int i = i1; i <= i2; i++)
-            {
-                for (int c = c1; c <= c2; c++)
+                for (int ci = 0; ci < column; ci++)
                 {
-                    if (grid[rowi + i, columni + c] > 0)
+                    if (ri == 0)
                     {
-                        updateGrid[rowi, columni]++;
+                        i1 = 0;
+                    }
+                    if (ci == 0)
+                    {
+                        c1 = 0;
+                    }
+                    if (ri == row - 1)
+                    {
+                        i2 = 0;
+                    }
+                    if (ci == column - 1)
+                    {
+                        c2 = 0;
+                    }
+                    for (int i = i1; i <= i2; i++)
+                    {
+                        for (int c = c1; c <= c2; c++)
+                        {
+                            if (grid[ri + i, ci + c] > 0)
+                            {
+                                updateGrid[ri, ci]++;
+                            }
+                        }
                     }
                 }
             }

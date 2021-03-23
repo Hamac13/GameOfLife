@@ -123,10 +123,7 @@ namespace WPFGOL3
     { 
         public GOLlogic() { }
         
-        public static void test(string test) 
-        {
-            
-        }
+        
     }
 
     

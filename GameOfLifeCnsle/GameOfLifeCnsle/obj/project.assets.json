@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\h.w.mcleod\\Documents\\School\\Computer Science\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
+      "projectUniqueName": "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
       "projectName": "GameOfLifeCnsle",
-      "projectPath": "C:\\Users\\h.w.mcleod\\Documents\\School\\Computer Science\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
+      "projectPath": "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
       "packagesPath": "C:\\Users\\h.w.mcleod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\h.w.mcleod\\Documents\\School\\Computer Science\\GameOfLifeCnsle\\GameOfLifeCnsle\\obj\\",
+      "outputPath": "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

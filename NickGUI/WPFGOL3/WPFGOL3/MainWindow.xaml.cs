@@ -119,6 +119,8 @@ namespace WPFGOL3
                 {
 
                     btnArr[i,c].Tag = updateGrid[i,c];
+                    btnArr[i,c].Content = btnArr[i,c].Tag;
+                    
 
                 }
             }
@@ -143,6 +145,7 @@ namespace WPFGOL3
                 {
                     btnArr[rowi, columni].Content = 0;
                     btnArr[rowi, columni].Background = Brushes.SteelBlue;
+                    updateGrid[rowi,columni] = 0;
                 }
             }
 
@@ -153,6 +156,7 @@ namespace WPFGOL3
         public GOLlogic() { }
         public static void check()
         {
+            
             int i1 = -1;
             int c1 = -1;
             int i2 = 1;
@@ -201,10 +205,13 @@ namespace WPFGOL3
                     if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) < 4 )
                     {
                         MainWindow.btnArr[ri, ci].Content = 1;
+                        MainWindow.btnArr[ri,ci].Background = Brushes.Firebrick;
                     }
                     else
                     {
                         MainWindow.btnArr[ri, ci].Content = 0;
+                        
+
                     }
                 }
             }

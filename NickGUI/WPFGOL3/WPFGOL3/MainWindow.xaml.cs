@@ -205,11 +205,14 @@ namespace WPFGOL3
                     if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) < 4 )
                     {
                         MainWindow.btnArr[ri, ci].Content = 1;
+                        
                         MainWindow.btnArr[ri,ci].Background = Brushes.Firebrick;
+                        
                     }
                     else
                     {
                         MainWindow.btnArr[ri, ci].Content = 0;
+                        
                         
 
                     }

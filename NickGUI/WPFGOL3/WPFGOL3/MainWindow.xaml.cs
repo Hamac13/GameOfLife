@@ -123,6 +123,8 @@ namespace WPFGOL3
                     btnArr[i,c].Content = btnArr[i,c].Tag;
                     
 
+
+
                 }
             }
 
@@ -144,7 +146,8 @@ namespace WPFGOL3
             {
                 for (rowi = 0; rowi < 20; rowi++)
                 {
-                    btnArr[rowi, columni].Content = 0;
+                    btnArr[rowi, columni].Tag = 0;
+                    btnArr[rowi, columni].Content = btnArr[rowi, columni].Tag;
                     btnArr[rowi, columni].Background = Brushes.SteelBlue;
                     updateGrid[rowi,columni] = 0;
                 }
@@ -187,14 +190,14 @@ namespace WPFGOL3
                     {
                         for (int c = c1; c <= c2; c++)
                         {
-                            if (Convert.ToInt32(MainWindow.btnArr[ri + i, ci + c].Tag) > 0)
+                            if (Convert.ToInt32(MainWindow.btnArr[ri + i, ci + c].Content) > 0)
                             {
                                 MainWindow.updateGrid[ri, ci]++;
                                 //MainWindow.updateGrid[ri, ci - 1]++;
                                 //MainWindow.updateGrid[ri, ci + 1]++;
-                                //MainWindow.updateGrid[ri+1, ci + 1]++;
+                                //MainWindow.updateGrid[ri + 1, ci + 1]++;
                                 //MainWindow.updateGrid[ri + 1, ci]++;
-                                //MainWindow.updateGrid[ri+1, ci - 1]++;
+                                //MainWindow.updateGrid[ri + 1, ci - 1]++;
                             }
                             
                         }
@@ -209,9 +212,10 @@ namespace WPFGOL3
             {
                 for (int ri = 0; ri < MainWindow.row; ri++)
                 {
-                    if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) < 4 )
+                    if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Content) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Content) < 4 )
                     {
-                        MainWindow.btnArr[ri, ci].Content = 1;
+                        MainWindow.btnArr[ri, ci].Tag = 1;
+                        MainWindow.btnArr[ri, ci].Content = MainWindow.btnArr[ri, ci].Tag;
                         
                         MainWindow.btnArr[ri,ci].Background = Brushes.Firebrick;
                         
@@ -220,7 +224,7 @@ namespace WPFGOL3
                     {
                         MainWindow.btnArr[ri, ci].Content = 0;
                         
-                        
+
 
                     }
                 }

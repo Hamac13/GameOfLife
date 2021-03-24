@@ -42,3 +42,10 @@ C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOf
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.CoreCompileInputs.cache
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.pdb
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csprojAssemblyReference.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.g.cs
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\App.g.cs
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.lref
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.pdb

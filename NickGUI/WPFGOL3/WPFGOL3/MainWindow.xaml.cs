@@ -127,7 +127,7 @@ namespace WPFGOL3
 
                 }
             }
-
+            
             //Button _btn = sender as Button;
             //int y = (int)_btn.GetValue(Grid.RowProperty);
             //int x = (int)_btn.GetValue(Grid.ColumnProperty);
@@ -186,18 +186,14 @@ namespace WPFGOL3
                     {
                         c2 = 0;
                     }
-                    for (int i = i1; i <= i2; i++)
+                    for (int i = i1; i < i2; i++)
                     {
-                        for (int c = c1; c <= c2; c++)
+                        for (int c = c1; c < c2; c++)
                         {
                             if (Convert.ToInt32(MainWindow.btnArr[ri + i, ci + c].Content) > 0)
                             {
                                 MainWindow.updateGrid[ri, ci]++;
-                                MainWindow.updateGrid[ri, ci - 1]++;
-                                MainWindow.updateGrid[ri, ci + 1]++;
-                                MainWindow.updateGrid[ri + 1, ci + 1]++;
-                                MainWindow.updateGrid[ri + 1, ci]++;
-                                MainWindow.updateGrid[ri + 1, ci - 1]++;
+                               
                             }
 
                         }

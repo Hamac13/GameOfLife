@@ -49,3 +49,11 @@ C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.lref
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.pdb
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe.config
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.pdb
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.baml
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.g.resources
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.Properties.Resources.resources
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.GenerateResource.cache
+C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.CoreCompileInputs.cache

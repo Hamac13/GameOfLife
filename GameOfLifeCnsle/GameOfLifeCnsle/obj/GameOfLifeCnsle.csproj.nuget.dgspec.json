@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\n.a.russell\\Documents\\Documents\\Yr13 2021\\CompSci\\GitHub\\Hamac13\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj": {}
+    "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\n.a.russell\\Documents\\Documents\\Yr13 2021\\CompSci\\GitHub\\Hamac13\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj": {
+    "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\n.a.russell\\Documents\\Documents\\Yr13 2021\\CompSci\\GitHub\\Hamac13\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
+        "projectUniqueName": "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
         "projectName": "GameOfLifeCnsle",
-        "projectPath": "C:\\Users\\n.a.russell\\Documents\\Documents\\Yr13 2021\\CompSci\\GitHub\\Hamac13\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
-        "packagesPath": "C:\\Users\\n.a.russell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\n.a.russell\\Documents\\Documents\\Yr13 2021\\CompSci\\GitHub\\Hamac13\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\obj\\",
+        "projectPath": "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\GameOfLifeCnsle.csproj",
+        "packagesPath": "C:\\Users\\h.w.mcleod\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\h.w.mcleod\\Desktop\\Github\\GameOfLife\\GameOfLifeCnsle\\GameOfLifeCnsle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\n.a.russell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\h.w.mcleod\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,7 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -58,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -109,13 +109,24 @@ namespace WPFGOL3
         }
         private void generate(object sender, RoutedEventArgs e)
         {
-            GOLlogic.check();
+            for (columni = 0; columni < column; columni++)
+            {
+                for (rowi = 0; rowi < row; rowi++)
+                {
 
-            GOLlogic.PrintGrid(updateGrid);
+                    GOLlogic.check(rowi, columni);
+
+                }
+            }
+
+
+            grid = updateGrid;
+            GOLlogic.PrintGrid(grid);
 
             GOLlogic.Iteration();
+            GOLlogic.PrintGrid(grid);
 
-            GOLlogic.PrintGrid(updateGrid);
+            
 
             for (int i = 0; i < 20; i++)
             {
@@ -176,11 +187,11 @@ namespace WPFGOL3
             {
                 c1 = 0;
             }
-            if (rowi == row - 1)
+            if (rowi == MainWindow.row - 1)
             {
                 i2 = 0;
             }
-            if (columni == column - 1)
+            if (columni == MainWindow.column - 1)
             {
                 c2 = 0;
             }
@@ -188,9 +199,9 @@ namespace WPFGOL3
             {
                 for (int c = c1; c <= c2; c++)
                 {
-                    if (grid[rowi + i, columni + c] > 0)
+                    if (MainWindow.grid[rowi + i, columni + c] > 0)
                     {
-                        updateGrid[rowi, columni]++;
+                        MainWindow.updateGrid[rowi, columni]++;
                     }
                 }
             }
@@ -202,13 +213,13 @@ namespace WPFGOL3
             {
                 for (int ri = 0; ri < MainWindow.row; ri++)
                 {
-                    if (1 < MainWindow.updateGrid[ri, ci] && MainWindow.updateGrid[ri, ci] < 4)
+                    if (1 < MainWindow.grid[ri, ci] && MainWindow.grid[ri, ci] < 4)
                     {
-                        MainWindow.updateGrid[ri, ci] = 1;
+                        MainWindow.grid[ri, ci] = 1;
                     }
                     else
                     {
-                        MainWindow.updateGrid[ri, ci] = 0;
+                        MainWindow.grid[ri, ci] = 0;
                     }
                 }
             }

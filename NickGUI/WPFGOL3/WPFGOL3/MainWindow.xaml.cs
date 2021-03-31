@@ -193,6 +193,7 @@ namespace WPFGOL3
                             if (Convert.ToInt32(MainWindow.btnArr[ri + i, ci + c].Content) > 0)
                             {
                                 MainWindow.updateGrid[ri, ci]++;
+                                
                                
                             }
 
@@ -208,7 +209,7 @@ namespace WPFGOL3
             {
                 for (int ri = 0; ri < MainWindow.row; ri++)
                 {
-                    if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Content) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Content) < 4)
+                    if (1 < Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) && Convert.ToInt32(MainWindow.btnArr[ri, ci].Tag) < 4)
                     {
                         MainWindow.btnArr[ri, ci].Tag = 1;
                         MainWindow.btnArr[ri, ci].Content = MainWindow.btnArr[ri, ci].Tag;

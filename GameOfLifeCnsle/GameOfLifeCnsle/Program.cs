@@ -12,7 +12,7 @@ namespace GameOfLifeCnsle
 
         public static int x;
         public static int y;
-        
+
         public static int[,] grid = new int[row, column];
         public static int[,] updateGrid = new int[row, column];
         static void Main(string[] args)
@@ -20,8 +20,8 @@ namespace GameOfLifeCnsle
             bool ylj = true;
             int rowi;
             int columni;
-           
-            
+
+            //int[,] grid = new int[row, column];
 
             for (columni = 0; columni < column; columni++)
             {
@@ -31,16 +31,16 @@ namespace GameOfLifeCnsle
                     updateGrid[rowi, columni] = 0;
                 }
             }
-            
+
             while (ylj)
             {
-                
+
                 x = Input.Validator("x-coord", row + 1, 0);
                 y = Input.Validator("y-coord", column + 1, 0);
                 x -= 1;
                 y -= 1;
 
-                
+                //grid[x , y + 1] = true;
                 grid[x, y] = 1;
                 Console.WriteLine("end?");
                 string end = Console.ReadLine();
@@ -50,32 +50,51 @@ namespace GameOfLifeCnsle
                 }
             }
 
-
-
-
-            check();
-            Console.Write("\n");
-            
-            grid = updateGrid;
-            PrintGrid(grid);
-            
+            //check();
             //Iteration();
-            //PrintGrid(grid);
-                
-            
+
+
+            //check(0);
+            for (int val = 0; val < 4; val++)
+            {
+
+
+                for (int ri = 0; ri < row; ri++)
+                {
+                    for (int ci = 0; ci < column; ci++)
+                    {
+                        //grid[ri, ci] = updateGrid[ri, ci];
+                    }
+                }
+                check();
+                PrintGrid(updateGrid);
+
+                Iteration();
+                PrintGrid(grid);
+                //PrintGrid(updateGrid);
+                //PrintGrid(grid);
+
+                for (int ri = 0; ri < row; ri++)
+                {
+                    for (int ci = 0; ci < column; ci++)
+                    {
+                        updateGrid[ri, ci] = grid[ri, ci];
+                    }
+                }
+            }
+
         }
 
         static void check()
         {
-            int i1 = -1;
-            int c1 = -1;
-            int i2 = 1;
-            int c2 = 1;
-           
             for (int ri = 0; ri < row; ri++)
             {
                 for (int ci = 0; ci < column; ci++)
                 {
+                    int i1 = -1;
+                    int c1 = -1;
+                    int i2 = 1;
+                    int c2 = 1;
                     if (ri == 0)
                     {
                         i1 = 0;
@@ -96,27 +115,35 @@ namespace GameOfLifeCnsle
                     {
                         for (int c = c1; c <= c2; c++)
                         {
-                            if (grid[ri + i, ci + c] > 0)
+                            //Console.WriteLine($"{i}, {c}");
+                            if (grid[ri + i, ci + c] >= 1)
                             {
                                 updateGrid[ri, ci]++;
+
                             }
                         }
                     }
                 }
             }
+
         }
 
         static void Iteration()
         {
+
             for (int ci = 0; ci < column; ci++)
             {
                 for (int ri = 0; ri < row; ri++)
                 {
-                    if (1 < grid[ri, ci] && grid[ri, ci] < 4 )
+                    if (3 < updateGrid[ri, ci] && updateGrid[ri, ci] <= 5)
                     {
                         grid[ri, ci] = 1;
                     }
                     else
+                    {
+                        grid[ri, ci] = 0;
+                    }
+                    if (grid[ri, ci] == 6)
                     {
                         grid[ri, ci] = 0;
                     }

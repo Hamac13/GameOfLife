@@ -175,49 +175,57 @@ namespace WPFGOL3
     public class GOLlogic
     {
         public GOLlogic() { }
-        public static void check(int rowi, int columni)
+        public static void check()
         {
-            int i1 = -1;
-            int c1 = -1;
-            int i2 = 1;
-            int c2 = 1;
-
-            if (rowi == 0)
+            for (int ri = 0; ri < MainWindow.row; ri++)
             {
-                i1 = 0;
-            }
-            if (columni == 0)
-            {
-                c1 = 0;
-            }
-            if (rowi == MainWindow.row - 1)
-            {
-                i2 = 0;
-            }
-            if (columni == MainWindow.column - 1)
-            {
-                c2 = 0;
-            }
-            for (int i = i1; i <= i2; i++)
-            {
-                for (int c = c1; c <= c2; c++)
+                for (int ci = 0; ci < MainWindow.column; ci++)
                 {
-                    if (MainWindow.grid[rowi + i, columni + c] > 0)
+                    int i1 = -1;
+                    int c1 = -1;
+                    int i2 = 1;
+                    int c2 = 1;
+                    if (ri == 0)
                     {
-                        
-                        MainWindow.updateGrid[rowi, columni]++;
+                        i1 = 0;
+                    }
+                    if (ci == 0)
+                    {
+                        c1 = 0;
+                    }
+                    if (ri == MainWindow.row - 1)
+                    {
+                        i2 = 0;
+                    }
+                    if (ci == MainWindow.column - 1)
+                    {
+                        c2 = 0;
+                    }
+                    for (int i = i1; i <= i2; i++)
+                    {
+                        for (int c = c1; c <= c2; c++)
+                        {
+                            //Console.WriteLine($"{i}, {c}");
+                            if (MainWindow.grid[ri + i, ci + c] >= 1)
+                            {
+                                MainWindow.updateGrid[ri, ci]++;
+
+                            }
+                        }
                     }
                 }
             }
+
         }
 
         public static void Iteration()
         {
+
             for (int ci = 0; ci < MainWindow.column; ci++)
             {
                 for (int ri = 0; ri < MainWindow.row; ri++)
                 {
-                    if (1 < MainWindow.grid[ri, ci] && MainWindow.grid[ri, ci] < 4)
+                    if (3 < MainWindow.updateGrid[ri, ci] && MainWindow.updateGrid[ri, ci] <= 5)
                     {
                         MainWindow.grid[ri, ci] = 1;
                     }

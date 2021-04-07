@@ -59,8 +59,8 @@ namespace GameOfLifeCnsle
             grid = updateGrid;
             PrintGrid(grid);
             
-            Iteration();
-            PrintGrid(grid);
+            //Iteration();
+            //PrintGrid(grid);
                 
             
         }

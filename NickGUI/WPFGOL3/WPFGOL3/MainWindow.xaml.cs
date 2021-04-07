@@ -100,7 +100,8 @@ namespace WPFGOL3
 
             btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
             btnArr[y - 1, x - 1].Content = 1;
-            updateGrid[y - 1, x - 1] = 1;
+            
+            grid[y - 1, x - 1] = 1;
             btnArr[y - 1, x - 1].Tag = 1;
 
             //return Tuple.Create(x, y);
@@ -115,15 +116,16 @@ namespace WPFGOL3
                 {
 
                     GOLlogic.check(rowi, columni);
+                    
 
                 }
             }
 
 
             grid = updateGrid;
-            GOLlogic.PrintGrid(grid);
+            //GOLlogic.PrintGrid(grid);
 
-            GOLlogic.Iteration();
+            //GOLlogic.Iteration();
             GOLlogic.PrintGrid(grid);
 
             
@@ -133,10 +135,10 @@ namespace WPFGOL3
                 for (int c = 0; c < 20; c++)
                 {
 
-                    btnArr[c, i].Tag = updateGrid[c, i];
-                    btnArr[c, i].Content = btnArr[c, i].Tag;
-
-
+                    btnArr[i, c].Tag = grid[i, c];
+                    btnArr[i, c].Content = btnArr[i, c].Tag;
+                    updateGrid[i, c] = 0;
+                    
 
 
                 }
@@ -164,6 +166,7 @@ namespace WPFGOL3
                     btnArr[rowi, columni].Content = btnArr[rowi, columni].Tag;
                     btnArr[rowi, columni].Background = Brushes.SteelBlue;
                     updateGrid[rowi, columni] = 0;
+                    grid[rowi, columni] = 0;
                 }
             }
 
@@ -201,6 +204,7 @@ namespace WPFGOL3
                 {
                     if (MainWindow.grid[rowi + i, columni + c] > 0)
                     {
+                        
                         MainWindow.updateGrid[rowi, columni]++;
                     }
                 }

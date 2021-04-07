@@ -110,23 +110,13 @@ namespace WPFGOL3
         }
         private void generate(object sender, RoutedEventArgs e)
         {
-            for (columni = 0; columni < column; columni++)
-            {
-                for (rowi = 0; rowi < row; rowi++)
-                {
 
-                    GOLlogic.check(rowi, columni);
-                    
-
-                }
-            }
-
-
-            grid = updateGrid;
+            GOLlogic.check();
+            GOLlogic.Iteration();
             //GOLlogic.PrintGrid(grid);
 
             //GOLlogic.Iteration();
-            GOLlogic.PrintGrid(grid);
+            //GOLlogic.PrintGrid(grid);
 
             
 
@@ -137,7 +127,7 @@ namespace WPFGOL3
 
                     btnArr[i, c].Tag = grid[i, c];
                     btnArr[i, c].Content = btnArr[i, c].Tag;
-                    updateGrid[i, c] = 0;
+                    updateGrid[i, c] = grid[i, c];
                     
 
 

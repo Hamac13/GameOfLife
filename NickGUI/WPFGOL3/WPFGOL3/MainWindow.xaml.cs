@@ -37,7 +37,7 @@ namespace WPFGOL3
         public MainWindow()
         {
             InitializeComponent();
-
+            
             for (columni = 0; columni < column; columni++)
             {
                 for (rowi = 0; rowi < row; rowi++)
@@ -170,7 +170,7 @@ namespace WPFGOL3
 
 
         }
-        public static  IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",")
+        public static  IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",") //borrowed from StackOverflow
         {
             for (int i = 0; i < data.GetLength(0); ++i)
                 yield return string.Join(separator, Enumerable
@@ -194,6 +194,7 @@ namespace WPFGOL3
             }
 
         }
+        public static bool val = false;
         private async void auto(object sender, RoutedEventArgs e)
         {
             //generate(this, e);
@@ -206,13 +207,18 @@ namespace WPFGOL3
             //Thread.Sleep(200);
             //generate(this, e);
             //Thread.Sleep(200);
-            for (int val = 0; val < 10; val++)
+            //for (int val = 0; val < 10; val++)
+            //{
+
+            //}
+            
+            val = !val;
+            while (val)
             {
                 generate(this, e);
-                
+
                 await Task.Delay(1000);
             }
-            
         }
     }
     public class GOLlogic

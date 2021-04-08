@@ -87,11 +87,11 @@ namespace WPFGOL3
         }
         private void closeWindow(object sender, RoutedEventArgs e)
         {
-            string message = "The program is now closing, saving the last grid now...";
+            string message = "The program is now closing, saving the last grid now... (Grid is saved to the current directory of the .exe)";
             string title = "Program closing";
             MessageBox.Show(message, title);
-            
-            File.WriteAllLines("C:/Users/n.a.russell/Documents/Documents/Yr13 2021/CompSci/GitHub/Hamac13/GameOfLife/NickGUI/WPFGOL3/data.csv",
+            var curDir = Directory.GetCurrentDirectory();
+            File.WriteAllLines($"{curDir}/data.csv",
                 ToCsv(grid));
             this.Close();
         }

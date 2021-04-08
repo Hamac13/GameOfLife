@@ -118,6 +118,13 @@ namespace WPFGOL3
         }
         public void generate(object sender, RoutedEventArgs e)
         {
+            for (int ri = 0; ri < row; ri++)
+            {
+                for (int ci = 0; ci < column; ci++)
+                {
+                    updateGrid[ri, ci] = grid[ri, ci];
+                }
+            }
 
             GOLlogic.check();
             
@@ -188,7 +195,7 @@ namespace WPFGOL3
 
         }
         private async void auto(object sender, RoutedEventArgs e)
-        {       
+        {
             //generate(this, e);
             //Console.WriteLine("E");
             //Thread.Sleep(2000);
@@ -241,6 +248,10 @@ namespace WPFGOL3
                     {
                         for (int c = c1; c <= c2; c++)
                         {
+                            if (c == 0 && i == 0)
+                            {
+                                continue;
+                            }
                             //Console.WriteLine($"{i}, {c}");
                             if (MainWindow.grid[ri + i, ci + c] >= 1)
                             {
@@ -256,28 +267,23 @@ namespace WPFGOL3
 
         public static void Iteration()
         {
-
+            int previous;
             for (int ci = 0; ci < MainWindow.column; ci++)
             {
                 for (int ri = 0; ri < MainWindow.row; ri++)
                 {
-                    if (MainWindow.updateGrid[ri,ci] == 5)
-                    {
-                        MainWindow.updateGrid[ri, ci]--;
-                    }
-                    //if (MainWindow.updateGrid[ri, ci] == 3)
-                    //{
-                    //    MainWindow.updateGrid[ri, ci]--;
-                    //}
-                    if (3 <= MainWindow.updateGrid[ri, ci] && MainWindow.updateGrid[ri, ci] <= 5)
+                    previous = MainWindow.grid[ri, ci];
+                    if (MainWindow.updateGrid[ri, ci] == 3)
                     {
                         MainWindow.grid[ri, ci] = 1;
-                        
+                    }
+                    else if (MainWindow.updateGrid[ri, ci] == 4 && previous >= 1)
+                    {
+                        MainWindow.grid[ri, ci] = 1;
                     }
                     else
                     {
                         MainWindow.grid[ri, ci] = 0;
-                        
                     }
                 }
             }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+using System.IO;
 
 namespace WPFGOL3
 {
@@ -40,7 +42,7 @@ namespace WPFGOL3
             {
                 for (rowi = 0; rowi < row; rowi++)
                 {
-
+                    grid[rowi, columni] = 0;
                     updateGrid[rowi, columni] = 0;
                 }
             }
@@ -85,6 +87,8 @@ namespace WPFGOL3
         }
         private void closeWindow(object sender, RoutedEventArgs e)
         {
+            File.WriteAllLines("C:/Users/n.a.russell/Documents/Documents/Yr13 2021/CompSci/GitHub/Hamac13/GameOfLife/NickGUI/WPFGOL3/data.csv",
+                ToCsv(grid));
             this.Close();
         }
         private /*Tuple<int,int>*/ void setState(object sender, RoutedEventArgs e)
@@ -102,23 +106,25 @@ namespace WPFGOL3
             btnArr[y - 1, x - 1].Content = 1;
             
             grid[y - 1, x - 1] = 1;
-            btnArr[y - 1, x - 1].Tag = 1;
+            btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
 
             //return Tuple.Create(x, y);
 
 
         }
-        private void generate(object sender, RoutedEventArgs e)
+        public void generate(object sender, RoutedEventArgs e)
         {
 
             GOLlogic.check();
+            
             GOLlogic.Iteration();
+            
             //GOLlogic.PrintGrid(grid);
 
             //GOLlogic.Iteration();
             //GOLlogic.PrintGrid(grid);
 
-            
+
 
             for (int i = 0; i < 20; i++)
             {
@@ -128,12 +134,20 @@ namespace WPFGOL3
                     btnArr[i, c].Tag = grid[i, c];
                     btnArr[i, c].Content = btnArr[i, c].Tag;
                     updateGrid[i, c] = grid[i, c];
+                    if (Convert.ToInt32(btnArr[i,c].Content) >= 1)
+                    {
+                        btnArr[i, c].Background = Brushes.Firebrick;
+                    }
+                    if (Convert.ToInt32(btnArr[i, c].Content) == 0)
+                    {
+                        btnArr[i, c].Background = Brushes.SteelBlue;
+                    }
                     
 
 
                 }
             }
-
+            
             //Button _btn = sender as Button;
             //int y = (int)_btn.GetValue(Grid.RowProperty);
             //int x = (int)_btn.GetValue(Grid.ColumnProperty);
@@ -145,6 +159,14 @@ namespace WPFGOL3
 
 
         }
+        public static  IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",")
+        {
+            for (int i = 0; i < data.GetLength(0); ++i)
+                yield return string.Join(separator, Enumerable
+                  .Range(0, data.GetLength(1))
+                  .Select(j => data[i, j])); // simplest, we don't expect ',' and '"' in the items
+        }
+    
         private void reset(object sender, RoutedEventArgs e)
         {
             //Console.WriteLine("Fuckin shitty");
@@ -160,6 +182,26 @@ namespace WPFGOL3
                 }
             }
 
+        }
+        private async void auto(object sender, RoutedEventArgs e)
+        {       
+            //generate(this, e);
+            //Console.WriteLine("E");
+            //Thread.Sleep(2000);
+            //Thread.Sleep(200);
+            //generate(this, e);
+            //Thread.Sleep(200);
+            //generate(this, e);
+            //Thread.Sleep(200);
+            //generate(this, e);
+            //Thread.Sleep(200);
+            for (int val = 0; val < 10; val++)
+            {
+                generate(this, e);
+                
+                await Task.Delay(1000);
+            }
+            
         }
     }
     public class GOLlogic
@@ -215,13 +257,23 @@ namespace WPFGOL3
             {
                 for (int ri = 0; ri < MainWindow.row; ri++)
                 {
-                    if (3 < MainWindow.updateGrid[ri, ci] && MainWindow.updateGrid[ri, ci] <= 5)
+                    if (MainWindow.updateGrid[ri,ci] == 5)
+                    {
+                        MainWindow.updateGrid[ri, ci]--;
+                    }
+                    //if (MainWindow.updateGrid[ri, ci] == 3)
+                    //{
+                    //    MainWindow.updateGrid[ri, ci]--;
+                    //}
+                    if (3 <= MainWindow.updateGrid[ri, ci] && MainWindow.updateGrid[ri, ci] <= 5)
                     {
                         MainWindow.grid[ri, ci] = 1;
+                        
                     }
                     else
                     {
                         MainWindow.grid[ri, ci] = 0;
+                        
                     }
                 }
             }

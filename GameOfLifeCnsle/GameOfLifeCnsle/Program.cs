@@ -52,7 +52,7 @@ namespace GameOfLifeCnsle
 
             //check();
             //Iteration();
-
+            PrintGrid(grid);
 
             //check(0);
             for (int val = 0; val < 4; val++)
@@ -67,7 +67,7 @@ namespace GameOfLifeCnsle
                     }
                 }
                 check();
-                PrintGrid(updateGrid);
+                //PrintGrid(updateGrid);
 
                 Iteration();
                 PrintGrid(grid);

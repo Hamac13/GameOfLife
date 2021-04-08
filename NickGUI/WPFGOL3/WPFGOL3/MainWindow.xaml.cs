@@ -87,13 +87,18 @@ namespace WPFGOL3
         }
         private void closeWindow(object sender, RoutedEventArgs e)
         {
-            string message = "The program is now closing, saving the last grid now... (Grid is saved to the current directory of the .exe)";
-            string title = "Program closing";
+            
+            this.Close();
+        }
+        private void save(object sender, RoutedEventArgs e)
+        {
+            string message = "Grid Saving (Grid is saved to the current directory of the .exe)";
+            string title = "Saving...";
             MessageBox.Show(message, title);
             var curDir = Directory.GetCurrentDirectory();
             File.WriteAllLines($"{curDir}/data.csv",
                 ToCsv(grid));
-            this.Close();
+
         }
         private /*Tuple<int,int>*/ void setState(object sender, RoutedEventArgs e)
         {
@@ -215,10 +220,13 @@ namespace WPFGOL3
             val = !val;
             while (val)
             {
+                autoGenerator.Background = Brushes.Orange;
                 generate(this, e);
 
-                await Task.Delay(1000);
+                await Task.Delay(100);
+                
             }
+            autoGenerator.Background = Brushes.LightGray;
         }
     }
     public class GOLlogic
@@ -312,12 +320,3 @@ namespace WPFGOL3
 
 
 }
-
-
-
-
-
-
-
-
-

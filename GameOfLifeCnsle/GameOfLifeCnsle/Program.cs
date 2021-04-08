@@ -63,7 +63,7 @@ namespace GameOfLifeCnsle
                 {
                     for (int ci = 0; ci < column; ci++)
                     {
-                        //grid[ri, ci] = updateGrid[ri, ci];
+                        updateGrid[ri, ci] = grid[ri, ci];
                     }
                 }
                 check();
@@ -115,6 +115,10 @@ namespace GameOfLifeCnsle
                     {
                         for (int c = c1; c <= c2; c++)
                         {
+                            if (c == 0 && i == 0)
+                            {
+                                continue;
+                            }
                             //Console.WriteLine($"{i}, {c}");
                             if (grid[ri + i, ci + c] >= 1)
                             {
@@ -130,20 +134,21 @@ namespace GameOfLifeCnsle
 
         static void Iteration()
         {
-
+            int previous;
             for (int ci = 0; ci < column; ci++)
             {
                 for (int ri = 0; ri < row; ri++)
                 {
-                    if (3 < updateGrid[ri, ci] && updateGrid[ri, ci] <= 5)
+                    previous = grid[ri, ci];
+                    if (updateGrid[ri, ci] == 3)
+                    {
+                        grid[ri, ci] = 1;
+                    }
+                    else if (updateGrid[ri, ci] == 4 && previous >= 1)
                     {
                         grid[ri, ci] = 1;
                     }
                     else
-                    {
-                        grid[ri, ci] = 0;
-                    }
-                    if (grid[ri, ci] == 6)
                     {
                         grid[ri, ci] = 0;
                     }

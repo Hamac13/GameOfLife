@@ -37,7 +37,7 @@ namespace WPFGOL3
         public MainWindow()
         {
             InitializeComponent();
-            
+
             for (columni = 0; columni < column; columni++)
             {
                 for (rowi = 0; rowi < row; rowi++)
@@ -87,7 +87,7 @@ namespace WPFGOL3
         }
         private void closeWindow(object sender, RoutedEventArgs e)
         {
-            
+
             this.Close();
         }
         private void save(object sender, RoutedEventArgs e)
@@ -113,7 +113,7 @@ namespace WPFGOL3
 
             btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
             btnArr[y - 1, x - 1].Content = 1;
-            
+
             grid[y - 1, x - 1] = 1;
             btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
 
@@ -132,9 +132,9 @@ namespace WPFGOL3
             }
 
             GOLlogic.check();
-            
+
             GOLlogic.Iteration();
-            
+
             //GOLlogic.PrintGrid(grid);
 
             //GOLlogic.Iteration();
@@ -150,7 +150,7 @@ namespace WPFGOL3
                     btnArr[i, c].Tag = grid[i, c];
                     btnArr[i, c].Content = btnArr[i, c].Tag;
                     updateGrid[i, c] = grid[i, c];
-                    if (Convert.ToInt32(btnArr[i,c].Content) >= 1)
+                    if (Convert.ToInt32(btnArr[i, c].Content) >= 1)
                     {
                         btnArr[i, c].Background = Brushes.Firebrick;
                     }
@@ -158,12 +158,12 @@ namespace WPFGOL3
                     {
                         btnArr[i, c].Background = Brushes.SteelBlue;
                     }
-                    
+
 
 
                 }
             }
-            
+
             //Button _btn = sender as Button;
             //int y = (int)_btn.GetValue(Grid.RowProperty);
             //int x = (int)_btn.GetValue(Grid.ColumnProperty);
@@ -175,14 +175,14 @@ namespace WPFGOL3
 
 
         }
-        public static  IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",") //borrowed from StackOverflow
+        public static IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",") //borrowed from StackOverflow
         {
             for (int i = 0; i < data.GetLength(0); ++i)
                 yield return string.Join(separator, Enumerable
                   .Range(0, data.GetLength(1))
                   .Select(j => data[i, j])); // simplest, we don't expect ',' and '"' in the items
         }
-    
+
         private void reset(object sender, RoutedEventArgs e)
         {
             //Console.WriteLine("Fuckin shitty");
@@ -216,7 +216,7 @@ namespace WPFGOL3
             //{
 
             //}
-            
+
             val = !val;
             while (val)
             {
@@ -224,10 +224,74 @@ namespace WPFGOL3
                 generate(this, e);
 
                 await Task.Delay(100);
-                
+
             }
             autoGenerator.Background = Brushes.LightGray;
         }
+        private void load(object sender, RoutedEventArgs e)
+        {
+            string loadMessage = "The program has loaded the contents of the saved csv, please press the generate button for it to show";
+            string loadTitle = "Loading......................";
+            MessageBox.Show(loadMessage, loadTitle);
+            loader(this, e);
+        }
+        public void loader(object sender, RoutedEventArgs e)
+        {
+            var curDir = Directory.GetCurrentDirectory();
+            var filePath = $"{curDir}/data.csv";
+            string[][] temp = File.ReadLines(filePath)
+                          .Select(line => line.Split(','))
+                          .ToArray();
+            var temp1 = To2D(temp);
+            int[,] second = new int[temp1.GetLength(0), temp1.GetLength(1)];
+
+            for (int j = 0; j < temp1.GetLength(0); j++)
+            {
+                for (int i = 0; i < temp1.GetLength(1); i++)
+                {
+                    int number;
+                    bool ok = int.TryParse(temp1[j, i], out number);
+                    if (ok)
+                    {
+                        second[j, i] = number;
+                    }
+                    else
+                    {
+                        second[j, i] = 0;
+                    }
+                }
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                for (int c = 0; c < 20; c++)
+                {
+                    grid[i, c] = second[i, c];
+
+
+                }
+            }
+
+        }
+        public static T[,] To2D<T>(T[][] source)
+        {
+            try
+            {
+                int FirstDim = source.Length;
+                int SecondDim = source.GroupBy(row => row.Length).Single().Key; // throws InvalidOperationException if source is not rectangular
+
+                var result = new T[FirstDim, SecondDim];
+                for (int i = 0; i < FirstDim; ++i)
+                    for (int j = 0; j < SecondDim; ++j)
+                        result[i, j] = source[i][j];
+
+                return result;
+            }
+            catch (InvalidOperationException)
+            {
+                throw new InvalidOperationException("The given jagged array is not rectangular.");
+            }
+        }
+
     }
     public class GOLlogic
     {

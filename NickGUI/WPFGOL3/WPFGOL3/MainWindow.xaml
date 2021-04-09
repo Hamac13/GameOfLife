@@ -9,7 +9,7 @@
         Title="Game of Life" Height="600" Width="800" >
     <Grid Name="gridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -59,8 +59,9 @@
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->
         <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>
-        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto">Auto</Button>
+        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto">Automatic</Button>
         <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save">Save</Button>
+        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load">Load</Button>
         <Button x:Name="test" Grid.Column="21" Content="Exit" Click="closeWindow"></Button>
         <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset">Reset</Button>
     </Grid>

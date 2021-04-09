@@ -27,21 +27,6 @@ C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\GameOfLife\Nic
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.CoreCompileInputs.cache
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.pdb
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe.config
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.pdb
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csprojAssemblyReference.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.g.cs
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\App.g.cs
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.lref
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.baml
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.g.resources
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.Properties.Resources.resources
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.GenerateResource.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.CoreCompileInputs.cache
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe
-C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.pdb
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csprojAssemblyReference.cache
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.g.cs
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\App.g.cs
@@ -57,3 +42,22 @@ C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.Properties.Resources.resources
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.GenerateResource.cache
 C:\Users\h.w.mcleod\Desktop\Github\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.CoreCompileInputs.cache
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe.config
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.pdb
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csprojAssemblyReference.cache
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.g.cs
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\App.g.cs
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.cache
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3_MarkupCompile.lref
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\MainWindow.baml
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.g.resources
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.Properties.Resources.resources
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.GenerateResource.cache
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csproj.CoreCompileInputs.cache
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.pdb
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.exe.manifest
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.application
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe.manifest
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.application

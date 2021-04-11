@@ -223,7 +223,7 @@ namespace WPFGOL3
                 autoGenerator.Background = Brushes.Orange;
                 generate(this, e);
 
-                await Task.Delay(100);
+                await Task.Delay(200);
 
             }
             autoGenerator.Background = Brushes.LightGray;

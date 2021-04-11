@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:WPFGOL3"
         mc:Ignorable="d"
 		
-        Title="Game of Life" Height="720" Width="1280" >
+        Title="Game of Life" Height="720" Width="1280" FontFamily="Consolas" FontSize="14" SnapsToDevicePixels="True" >
     <Grid Name="gridMain">
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -29,11 +30,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-			<RowDefinition Height="*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
+
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -54,16 +55,38 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="2*"/>
-            
+            <ColumnDefinition Width="2*"/>
+
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->
-        <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>
-        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto">Automatic</Button>
-        <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save">Save</Button>
-        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load">Load</Button>
-        <Button x:Name="test" Grid.Column="21" Content="Exit" Click="closeWindow"></Button>
-        <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset">Reset</Button>
+        <!--<StackPanel>-->
+            <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>
+            <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto">Automatic</Button>
+            <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save">Save</Button>
+            <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load">Load</Button>
+            <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset">Reset</Button>
+            <Button x:Name="exitButton" Grid.Column="21" Click="closeWindow" Grid.Row="0">Exit</Button>
+        <!--</StackPanel>-->
+        <!--<ToolBar>
+            <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>
+            <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto">Automatic</Button>
+            <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save">Save</Button>
+            <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load">Load</Button>
+            <Button x:Name="test" Grid.Column="21" Content="Exit" Click="closeWindow"></Button>
+            <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset">Reset</Button>
+            <Menu>
+                <MenuItem Header="Menu">
+                    <MenuItem Header="MenuItem1"/>
+                </MenuItem>
+            </Menu>
+        </ToolBar>-->
+
+
+
+    
     </Grid>
     
+
+
+
 </Window>

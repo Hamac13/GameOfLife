@@ -234,8 +234,8 @@ namespace WPFGOL3
                 generate(this, e);
                 
                 
-                generation++;
-                Generations.Content = $"Generation: {generation}";
+                
+                
 
                 await Task.Delay(200);
 

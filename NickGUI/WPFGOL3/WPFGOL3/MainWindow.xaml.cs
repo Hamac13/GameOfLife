@@ -140,6 +140,8 @@ namespace WPFGOL3
             GOLlogic.check();
 
             GOLlogic.Iteration();
+            generation++;
+            Generations.Content = $"Generation: {generation}";
 
             //GOLlogic.PrintGrid(grid);
 

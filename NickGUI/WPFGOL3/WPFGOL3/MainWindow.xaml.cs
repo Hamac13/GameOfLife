@@ -116,13 +116,22 @@ namespace WPFGOL3
             //Console.WriteLine($"{x},{y}");
 
 
+            if (grid[y - 1, x - 1] == 1)
+            {
+                btnArr[y - 1, x - 1].Background = Brushes.SteelBlue;
+                btnArr[y - 1, x - 1].Content = 0;
 
-            btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
-            btnArr[y - 1, x - 1].Content = 1;
+                grid[y - 1, x - 1] = 0;
+                btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
+            }
+            else
+            {
+                btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
+                btnArr[y - 1, x - 1].Content = 1;
 
-            grid[y - 1, x - 1] = 1;
-            btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
-
+                grid[y - 1, x - 1] = 1;
+                btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
+            }
             //return Tuple.Create(x, y);
 
 

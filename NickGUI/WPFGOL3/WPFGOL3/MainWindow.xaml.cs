@@ -212,29 +212,16 @@ namespace WPFGOL3
         public static bool val = false;
         private async void auto(object sender, RoutedEventArgs e)
         {
-            //generate(this, e);
-            //Console.WriteLine("E");
-            //Thread.Sleep(2000);
-            //Thread.Sleep(200);
-            //generate(this, e);
-            //Thread.Sleep(200);
-            //generate(this, e);
-            //Thread.Sleep(200);
-            //generate(this, e);
-            //Thread.Sleep(200);
-            //for (int val = 0; val < 10; val++)
-            //{
-
-            //}
             
             val = !val;
             while (val)
             {
                 autoGenerator.Background = Brushes.Orange;
+                
                 generate(this, e);
-                
-                
-                
+
+
+
                 
 
                 await Task.Delay(200);
@@ -351,7 +338,7 @@ namespace WPFGOL3
                             {
                                 continue;
                             }
-                            //Console.WriteLine($"{i}, {c}");
+                           
                             if (MainWindow.grid[ri + i, ci + c] >= 1)
                             {
                                 MainWindow.updateGrid[ri, ci]++;

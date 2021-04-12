@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WPFGOL3.exe" size="20968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WPFGOL3.exe" size="21480">
       <assemblyIdentity name="WPFGOL3" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h9ACF6aREOnSRIzKtAKRiMwvb4r1t1Ff0LSQgo+CW/c=</dsig:DigestValue>
+        <dsig:DigestValue>F0C35HzhnoSiwSESZT1UFW+Vo46NH0FfzbelSgvrC4k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

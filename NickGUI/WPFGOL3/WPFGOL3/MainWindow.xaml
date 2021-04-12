@@ -66,6 +66,7 @@
             <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load">Load</Button>
             <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset">Reset</Button>
             <Button x:Name="exitButton" Grid.Column="21" Click="closeWindow" Grid.Row="0">Exit</Button>
+        <Label x:Name="Generations" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="31" Grid.ColumnSpan="3" Width="154"/>
         <!--</StackPanel>-->
         <!--<ToolBar>
             <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>

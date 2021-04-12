@@ -25,6 +25,7 @@ namespace WPFGOL3
     {
         public static int column = 20;
         public static int row = 20;
+        public static int generation = 0;
 
         //Button[,] btnArr = new Button[rows, columns];
         public static Button[,] btnArr = new Button[row, column];
@@ -37,6 +38,7 @@ namespace WPFGOL3
         public MainWindow()
         {
             InitializeComponent();
+            Generations.Content = $"Generation: {generation}";
 
             for (columni = 0; columni < column; columni++)
             {
@@ -74,6 +76,8 @@ namespace WPFGOL3
                 }
             }
 
+            
+
 
             //for (int i = 0; i < 20; i++)
             //{
@@ -87,7 +91,9 @@ namespace WPFGOL3
         }
         private void closeWindow(object sender, RoutedEventArgs e)
         {
-
+            string exitMessage = "Application is closing, please press OK.";
+            string exitTitle = "Application Closing";
+            MessageBox.Show(exitMessage, exitTitle);
             this.Close();
         }
         private void save(object sender, RoutedEventArgs e)
@@ -197,6 +203,8 @@ namespace WPFGOL3
                     grid[rowi, columni] = 0;
                 }
             }
+            generation = 0;
+            Generations.Content = $"Generation: {generation}";
 
         }
         public static bool val = false;
@@ -216,24 +224,33 @@ namespace WPFGOL3
             //{
 
             //}
-
+            
             val = !val;
             while (val)
             {
                 autoGenerator.Background = Brushes.Orange;
                 generate(this, e);
+                
+                
+                generation++;
+                Generations.Content = $"Generation: {generation}";
 
                 await Task.Delay(200);
 
             }
             autoGenerator.Background = Brushes.LightGray;
+            
+
         }
         private void load(object sender, RoutedEventArgs e)
         {
-            string loadMessage = "The program has loaded the contents of the saved csv, please press the generate button for it to show";
+            string loadMessage = "The program has loaded the contents of the saved csv";
             string loadTitle = "Loading......................";
             MessageBox.Show(loadMessage, loadTitle);
+            
+            
             loader(this, e);
+
         }
         public void loader(object sender, RoutedEventArgs e)
         {
@@ -270,6 +287,8 @@ namespace WPFGOL3
 
                 }
             }
+            GOLlogic.check();
+            generate(this, e);
 
         }
         public static T[,] To2D<T>(T[][] source)

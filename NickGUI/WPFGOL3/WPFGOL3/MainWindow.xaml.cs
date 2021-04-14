@@ -139,6 +139,7 @@ namespace WPFGOL3
                 btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
             }
             //return Tuple.Create(x, y);
+            CheckIf(grid);
 
 
         }
@@ -155,7 +156,7 @@ namespace WPFGOL3
             GOLlogic.check();
 
             GOLlogic.Iteration();
-
+            CheckIf(grid);
             
 
             generation++;
@@ -198,10 +199,28 @@ namespace WPFGOL3
             //Console.WriteLine($"{x},{y}");
             //btnArr[y + 1, x + 1].Background = Brushes.Firebrick;
             //btnArr[y + 1, x + 1].Content = 1;
-
+            
 
         }
         
+        public void CheckIf (int [,] array)
+        {
+            alive = 0;
+            for (int i = 0; i < row; i++)
+            {
+                for (int c = 0; c < column; c++)
+                {
+                    if (array[i,c] == 1)
+                    {
+                        alive++;
+                       
+                    }
+                    AliveCells.Content = $"Alive: {alive}";
+
+                }
+            }
+        }
+
         public static IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",") //borrowed from StackOverflow
         {
             for (int i = 0; i < data.GetLength(0); ++i)
@@ -226,6 +245,7 @@ namespace WPFGOL3
             }
             generation = 0;
             Generations.Content = $"Generation: {generation}";
+            CheckIf(grid);
 
         }
         public static bool val = false;

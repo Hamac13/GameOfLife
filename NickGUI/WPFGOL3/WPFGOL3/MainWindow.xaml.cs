@@ -26,6 +26,8 @@ namespace WPFGOL3
         public static int column = 20;
         public static int row = 20;
         public static int generation = 0;
+        public static int alive = 0;
+        
 
         //Button[,] btnArr = new Button[rows, columns];
         public static Button[,] btnArr = new Button[row, column];
@@ -39,6 +41,7 @@ namespace WPFGOL3
         {
             InitializeComponent();
             Generations.Content = $"Generation: {generation}";
+            AliveCells.Content = $"Alive: {alive}";
 
             for (columni = 0; columni < column; columni++)
             {
@@ -63,6 +66,7 @@ namespace WPFGOL3
                     btnArr[columni, rowi].Tag = 0;
                     btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
                     btnArr[columni, rowi].Background = Brushes.SteelBlue;
+                    btnArr[columni, rowi].BorderBrush = Brushes.Black;
                     btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
 
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
@@ -70,13 +74,13 @@ namespace WPFGOL3
                     gridMain.Children.Add(btnArr[columni, rowi]);
 
                     btnArr[columni, rowi].Click += setState;
-
+                    
                     //Console.WriteLine($"{x},{y}");
 
                 }
             }
-
             
+
 
 
             //for (int i = 0; i < 20; i++)
@@ -121,6 +125,8 @@ namespace WPFGOL3
                 btnArr[y - 1, x - 1].Background = Brushes.SteelBlue;
                 btnArr[y - 1, x - 1].Content = 0;
 
+                
+
                 grid[y - 1, x - 1] = 0;
                 btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
             }
@@ -149,6 +155,9 @@ namespace WPFGOL3
             GOLlogic.check();
 
             GOLlogic.Iteration();
+
+            
+
             generation++;
             Generations.Content = $"Generation: {generation}";
 
@@ -192,6 +201,7 @@ namespace WPFGOL3
 
 
         }
+        
         public static IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",") //borrowed from StackOverflow
         {
             for (int i = 0; i < data.GetLength(0); ++i)
@@ -230,10 +240,10 @@ namespace WPFGOL3
                 generate(this, e);
 
 
-
+                int speed = Convert.ToInt32(speedBox.Text);
                 
 
-                await Task.Delay(200);
+                await Task.Delay(speed);
 
             }
             autoGenerator.Background = Brushes.LightGray;

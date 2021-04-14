@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFGOL3"
         mc:Ignorable="d"
 		
-        Title="Game of Life" Height="720" Width="1280" FontFamily="Consolas" FontSize="14" SnapsToDevicePixels="True" >
+        Title="Game of Life" Height="800" Width="1200" FontFamily="Consolas" FontSize="16" SnapsToDevicePixels="True" >
     <Grid Name="gridMain">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -60,13 +60,16 @@
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->
         <!--<StackPanel>-->
-            <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>
-            <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto">Automatic</Button>
-            <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save">Save</Button>
-            <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load">Load</Button>
-            <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset">Reset</Button>
-            <Button x:Name="exitButton" Grid.Column="21" Click="closeWindow" Grid.Row="0">Exit</Button>
+        <Button x:Name="generator" Grid.Column="0" Click="generate" BorderBrush="Black">Generate</Button>
+        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto" BorderBrush="Black">Automatic</Button>
+        <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save" BorderBrush="Black">Save</Button>
+        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load" BorderBrush="Black">Load</Button>
+        <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset" BorderBrush="Black">Reset</Button>
+        <Button x:Name="exitButton" Grid.Column="21" Click="closeWindow" Grid.Row="0" BorderBrush="Black">Exit</Button>
         <Label x:Name="Generations" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="31" Grid.ColumnSpan="3" Width="154"/>
+        <TextBox HorizontalAlignment="Left" Margin="61,5,0,0" Grid.Row="5" TextWrapping="Wrap" Text="200" x:Name="speedBox" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}" RenderTransformOrigin="1.565,0.395" Grid.ColumnSpan="2"/>
+        <Label Content="Speed:" HorizontalAlignment="Left" Margin="-2,1,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Margin="36.667,0,0,0" VerticalAlignment="Top" Width="101" Grid.ColumnSpan="3" Grid.Column="4"/>
         <!--</StackPanel>-->
         <!--<ToolBar>
             <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>
@@ -84,9 +87,9 @@
 
 
 
-    
+
     </Grid>
-    
+
 
 
 

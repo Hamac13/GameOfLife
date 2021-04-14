@@ -31,6 +31,7 @@ namespace WPFGOL3
 
         //Button[,] btnArr = new Button[rows, columns];
         public static Button[,] btnArr = new Button[row, column];
+        
         public static int[,] grid = new int[row, column];
         public static int[,] updateGrid = new int[row, column];
 
@@ -39,6 +40,7 @@ namespace WPFGOL3
 
         public MainWindow()
         {
+
             InitializeComponent();
             Generations.Content = $"Generation: {generation}";
             AliveCells.Content = $"Alive: {alive}";
@@ -58,28 +60,42 @@ namespace WPFGOL3
 
             for (columni = 0; columni < column; columni++)
             {
+                ColumnDefinition colDef = new ColumnDefinition();
+                RowDefinition rowDef = new RowDefinition();
                 for (rowi = 0; rowi < row; rowi++)
                 {
+                    
                     btnArr[columni, rowi] = new Button();
                     int y = Grid.GetRow(btnArr[columni, rowi]);
                     int x = Grid.GetColumn(btnArr[columni, rowi]);
                     btnArr[columni, rowi].Tag = 0;
-                    btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
+                    //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
                     btnArr[columni, rowi].Background = Brushes.SteelBlue;
                     btnArr[columni, rowi].BorderBrush = Brushes.Black;
                     btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
-
+                    
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
                     Grid.SetRow(btnArr[columni, rowi], columni + 1);
                     gridMain.Children.Add(btnArr[columni, rowi]);
-
+                    
                     btnArr[columni, rowi].Click += setState;
                     
                     //Console.WriteLine($"{x},{y}");
 
                 }
+                colDef.Width = new GridLength(1, GridUnitType.Star);
+                rowDef.Height = new GridLength(1, GridUnitType.Star);
+                gridMain.RowDefinitions.Add(rowDef);
+                gridMain.ColumnDefinitions.Add(colDef);
             }
-            
+            RowDefinition rowDef2 = new RowDefinition();
+            rowDef2.Height = new GridLength(2, GridUnitType.Star);
+            gridMain.RowDefinitions.Add(rowDef2);
+            ColumnDefinition colDef2 = new ColumnDefinition();
+            colDef2.Width = new GridLength(2, GridUnitType.Star);
+            gridMain.ColumnDefinitions.Add(colDef2);
+
+
 
 
 
@@ -123,7 +139,7 @@ namespace WPFGOL3
             if (grid[y - 1, x - 1] == 1)
             {
                 btnArr[y - 1, x - 1].Background = Brushes.SteelBlue;
-                btnArr[y - 1, x - 1].Content = 0;
+                btnArr[y - 1, x - 1].Tag = 0;
 
                 
 
@@ -133,7 +149,7 @@ namespace WPFGOL3
             else
             {
                 btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
-                btnArr[y - 1, x - 1].Content = 1;
+                btnArr[y - 1, x - 1].Tag = 1;
 
                 grid[y - 1, x - 1] = 1;
                 btnArr[y - 1, x - 1].Tag = grid[y - 1, x - 1];
@@ -175,13 +191,13 @@ namespace WPFGOL3
                 {
 
                     btnArr[i, c].Tag = grid[i, c];
-                    btnArr[i, c].Content = btnArr[i, c].Tag;
+                    //btnArr[i, c].Content = btnArr[i, c].Tag;
                     updateGrid[i, c] = grid[i, c];
-                    if (Convert.ToInt32(btnArr[i, c].Content) >= 1)
+                    if (Convert.ToInt32(btnArr[i, c].Tag) >= 1)
                     {
                         btnArr[i, c].Background = Brushes.Firebrick;
                     }
-                    if (Convert.ToInt32(btnArr[i, c].Content) == 0)
+                    if (Convert.ToInt32(btnArr[i, c].Tag) == 0)
                     {
                         btnArr[i, c].Background = Brushes.SteelBlue;
                     }
@@ -237,7 +253,7 @@ namespace WPFGOL3
                 for (rowi = 0; rowi < 20; rowi++)
                 {
                     btnArr[rowi, columni].Tag = 0;
-                    btnArr[rowi, columni].Content = btnArr[rowi, columni].Tag;
+                    //btnArr[rowi, columni].Content = btnArr[rowi, columni].Tag;
                     btnArr[rowi, columni].Background = Brushes.SteelBlue;
                     updateGrid[rowi, columni] = 0;
                     grid[rowi, columni] = 0;

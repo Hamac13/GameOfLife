@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\GameOfLifeCnsle",
-    "\\GameOfLifeCnsle\\GameOfLifeCnsle",
-    "\\NickGUI",
-    "\\NickGUI\\WPFGOL3",
-    "\\NickGUI\\WPFGOL3\\WPFGOL3"
+    ""
   ],
-  "SelectedNode": "\\GameOfLifeCnsle\\GameOfLifeCnsle\\Program.cs",
+  "SelectedNode": "\\WPFGOL3.sln",
   "PreviewInSolutionExplorer": false
 }

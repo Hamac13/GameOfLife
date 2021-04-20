@@ -45,18 +45,17 @@
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->
         <!--<StackPanel>-->
-        <Button x:Name="generator" Grid.Column="0" Click="generate" BorderBrush="Black" Padding="5">Generate</Button>
-        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="2" Click="auto" BorderBrush="Black" Padding="5">Automatic</Button>
-        <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="3" Click="save" BorderBrush="Black" Padding="5">Save</Button>
-        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="4" Click="load" BorderBrush="Black" Padding="5">Load</Button>
-        <Button x:Name="Reset" Grid.Column="0" Grid.Row="1" Click="reset" BorderBrush="Black">Reset</Button>
+        <Button x:Name="generator" Grid.Column="0" Grid.Row="1" Click="generate" BorderBrush="Black" Padding="5">Generate</Button>
+        <Button x:Name="Reset" Grid.Column="0" Grid.Row="2" Click="reset" BorderBrush="Black">Reset</Button>
+        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="3" Click="auto" BorderBrush="Black" Padding="5">Automatic</Button>
+        <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="4" Click="save" BorderBrush="Black" Padding="5">Save</Button>
+        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="5" Click="load" BorderBrush="Black" Padding="5">Load</Button>
         <Button x:Name="exitButton" Grid.Column="0" Click="closeWindow" Grid.Row="6" BorderBrush="Black" Padding="5" Width="Auto">Exit</Button>
-        <Label x:Name="Generations" Content="" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="3" Width="Auto"/>
-
-        <Label Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Grid.Column="6" Margin="0,0,1,0"/>
-        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="200" x:Name="speedBox" Padding="5" VerticalAlignment="Center" Grid.Column="7" Grid.ColumnSpan="1" BorderBrush="{x:Null}"/>
-
-        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="3" Grid.Column="4"/>
+        <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="3" Width="Auto"/>
+        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Grid.Column="4" Margin="0,0,1,0"/>
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="200" x:Name="speedBox" Padding="5" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="1" BorderBrush="{x:Null}"/>
+        
         <!--</StackPanel>-->
         <!--<ToolBar>
             <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>

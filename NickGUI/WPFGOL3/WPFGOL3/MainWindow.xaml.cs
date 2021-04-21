@@ -73,9 +73,9 @@ namespace WPFGOL3
                     //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
                     btnArr[columni, rowi].Background = Brushes.SteelBlue;
                     btnArr[columni, rowi].BorderBrush = Brushes.Black;
-                    //btnArr[columni, rowi].BorderThickness = new Thickness(5, 5, 5, 5);
+                    btnArr[columni, rowi].BorderThickness = new Thickness(1);
 
-                    
+                    btnArr[columni, rowi].Margin = new Thickness(0.3);
                     btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
                     
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);

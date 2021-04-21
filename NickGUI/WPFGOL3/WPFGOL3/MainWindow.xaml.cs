@@ -62,6 +62,7 @@ namespace WPFGOL3
             {
                 ColumnDefinition colDef = new ColumnDefinition();
                 RowDefinition rowDef = new RowDefinition();
+                
                 for (rowi = 0; rowi < row; rowi++)
                 {
                     
@@ -72,6 +73,9 @@ namespace WPFGOL3
                     //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
                     btnArr[columni, rowi].Background = Brushes.SteelBlue;
                     btnArr[columni, rowi].BorderBrush = Brushes.Black;
+                    //btnArr[columni, rowi].BorderThickness = new Thickness(5, 5, 5, 5);
+
+                    
                     btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
                     
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
@@ -80,11 +84,13 @@ namespace WPFGOL3
                     
                     btnArr[columni, rowi].Click += setState;
                     
+
                     //Console.WriteLine($"{x},{y}");
 
                 }
-                colDef.Width = new GridLength(1, GridUnitType.Star);
-                rowDef.Height = new GridLength(1, GridUnitType.Star);
+                
+                colDef.Width = new GridLength(2, GridUnitType.Star);
+                rowDef.Height = new GridLength(2, GridUnitType.Star);
                 gridMain.RowDefinitions.Add(rowDef);
                 gridMain.ColumnDefinitions.Add(colDef);
             }

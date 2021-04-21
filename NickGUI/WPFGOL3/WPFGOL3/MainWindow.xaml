@@ -12,13 +12,14 @@
         FontSize="16" 
         SnapsToDevicePixels="True" 
         UseLayoutRounding="True" 
-        WindowStartupLocation="CenterScreen"  >
-    <Grid Name="gridMain">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Padding="5"  >
+    <Grid Name="gridMain" ShowGridLines="False" Margin="10" UseLayoutRounding="True" ClipToBounds="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
+            
 
             <!--<ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -45,17 +46,17 @@
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->
         <!--<StackPanel>-->
-        <Button x:Name="generator" Grid.Column="0" Grid.Row="1" Click="generate" BorderBrush="Black" Padding="5">Generate</Button>
-        <Button x:Name="Reset" Grid.Column="0" Grid.Row="2" Click="reset" BorderBrush="Black">Reset</Button>
-        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="3" Click="auto" BorderBrush="Black" Padding="5">Automatic</Button>
-        <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="4" Click="save" BorderBrush="Black" Padding="5">Save</Button>
-        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="5" Click="load" BorderBrush="Black" Padding="5">Load</Button>
-        <Button x:Name="exitButton" Grid.Column="0" Click="closeWindow" Grid.Row="6" BorderBrush="Black" Padding="5" Width="Auto">Exit</Button>
+        <Button x:Name="generator" Grid.Column="0" Grid.Row="1" Width="Auto" Height="Auto" Click="generate" BorderBrush="Black" Padding="10" Margin="0,1,10,1">Generate</Button>
+        <Button x:Name="Reset" Grid.Column="0" Grid.Row="2" Click="reset" Width="Auto" Height="Auto" BorderBrush="Black" Padding="10" Margin="0,1,10,1">Reset</Button>
+        <Button x:Name="autoGenerator" Grid.Column="0" Grid.Row="3" Click="auto" Width="Auto" Height="Auto" BorderBrush="Black" Padding="10" Margin="0,1,10,1">Automatic</Button>
+        <Button x:Name="savingPrivateParts" Grid.Column="0" Grid.Row="4" Click="save" Width="Auto" Height="Auto" BorderBrush="Black" Padding="10" Margin="0,1,10,1">Save</Button>
+        <Button x:Name="loadingButton" Grid.Column="0" Grid.Row="5" Click="load" Width="Auto" Height="Auto" BorderBrush="Black" Padding="10" Margin="0,1,10,1">Load</Button>
+        <Button x:Name="exitButton" Grid.Column="0" Click="closeWindow" Grid.Row="6" BorderBrush="Black" Padding="10" Width="Auto" Height="Auto" Margin="0,1,10,1">Exit</Button>
         <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="3" Width="Auto"/>
-        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="2" Grid.Column="2"/>
-        <Label Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Grid.Column="4" Margin="0,0,1,0"/>
-        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="200" x:Name="speedBox" Padding="5" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="1" BorderBrush="{x:Null}"/>
-        
+        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label x:Name="Speed"  Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Grid.Column="4" Margin="0,0,1,0"/>
+        <TextBox x:Name="speedBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="200"  Padding="5" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="1" BorderBrush="{x:Null}"/>
+
         <!--</StackPanel>-->
         <!--<ToolBar>
             <Button x:Name="generator" Grid.Column="0" Click="generate">Generate</Button>

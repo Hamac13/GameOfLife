@@ -333,12 +333,17 @@ namespace WPFGOL3
                 for (int c = 0; c < 20; c++)
                 {
                     grid[i, c] = second[i, c];
+                    btnArr[i, c].Tag = grid[i, c];
 
-
+                    if (Convert.ToInt32(btnArr[i, c].Tag) >= 1)
+                    {
+                        btnArr[i, c].Background = Brushes.Firebrick;
+                    }
                 }
             }
+            
             GOLlogic.check();
-            generate(this, e);
+            CheckIf(grid);
 
         }
         public static T[,] To2D<T>(T[][] source)

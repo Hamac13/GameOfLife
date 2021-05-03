@@ -19,24 +19,39 @@ namespace WPFGOL3
     /// </summary>
     public partial class GridDef : Window
     {
+        
         public GridDef()
         {
             InitializeComponent();
-
             
+            
+            
+
         }
-        private void closeWindow(object sender, RoutedEventArgs e)
+        
+        public void closeWindow(object sender, RoutedEventArgs e)
         {
+
             MainWindow Main = new MainWindow();
+            
+
             Main.Show();
 
             this.Close();
-            
-            
+
             
             
             
         }
+        
+        //private void setRow(object sender, RoutedEventArgs e)
+        //{
+            
+        //}
+        //private void setColumn(object sender, RoutedEventArgs e)
+        //{
+            
+        //}
        
     }
 }

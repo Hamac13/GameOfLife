@@ -13,7 +13,7 @@
         FontSize="16" 
         SnapsToDevicePixels="True" 
         UseLayoutRounding="True" 
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Padding="5" 
+        WindowStartupLocation="CenterScreen"  Padding="5" 
         >
 
     <Grid Name="gridMain" ShowGridLines="False" Margin="10" UseLayoutRounding="True" ClipToBounds="True">

@@ -25,30 +25,38 @@ namespace WPFGOL3
 
     public partial class MainWindow : Window
     {
-        public static int column = 20;
-        public static int row = 20;
+        public static GridDef Grid_Def = new GridDef();
+
+        public static int column = Convert.ToInt32(Grid_Def.Columns.Text);
+        public static int row = Convert.ToInt32(Grid_Def.Rows.Text);
+
         public static int generation = 0;
         public static int alive = 0;
 
 
         //Button[,] btnArr = new Button[rows, columns];
         public static Button[,] btnArr = new Button[row, column];
-        public static GridDef Grid_Def = new GridDef();
+        
         public static int[,] grid = new int[row, column];
         public static int[,] updateGrid = new int[row, column];
 
         public static int rowi;
         public static int columni;
-
+        
         public MainWindow()
         {
+            GridDef Grid_Def = new GridDef();
+
+            
+            Console.WriteLine($"{row}, {column}");
             Grid_Def.Close();
             Grid_Def.Visibility = Visibility.Hidden;
-
+            
             InitializeComponent();
             Generations.Content = $"Generation: {generation}";
             AliveCells.Content = $"Alive: {alive}";
-
+            
+            
             for (columni = 0; columni < column; columni++)
             {
                 for (rowi = 0; rowi < row; rowi++)
@@ -61,6 +69,7 @@ namespace WPFGOL3
 
             //Button[,] btnArr = new Button[20, 20];
 
+            
 
             for (columni = 0; columni < column; columni++)
             {
@@ -71,8 +80,7 @@ namespace WPFGOL3
                 {
 
                     btnArr[columni, rowi] = new Button();
-                    int y = Grid.GetRow(btnArr[columni, rowi]);
-                    int x = Grid.GetColumn(btnArr[columni, rowi]);
+                    
                     btnArr[columni, rowi].Tag = 0;
                     //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
                     btnArr[columni, rowi].Background = Brushes.SteelBlue;
@@ -80,7 +88,7 @@ namespace WPFGOL3
                     btnArr[columni, rowi].BorderThickness = new Thickness(1);
 
                     btnArr[columni, rowi].Margin = new Thickness(0.3);
-                    btnArr[columni, rowi].Name = "Button" + y.ToString() + x.ToString();
+                    
 
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
                     Grid.SetRow(btnArr[columni, rowi], columni + 1);

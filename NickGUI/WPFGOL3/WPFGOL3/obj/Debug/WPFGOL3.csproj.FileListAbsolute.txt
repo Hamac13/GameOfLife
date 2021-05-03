@@ -61,3 +61,7 @@ C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOf
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\bin\Debug\WPFGOL3.application
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.exe.manifest
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.application
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\Window1.g.cs
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\Window1.baml
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\GridDef.g.cs
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\GridDef.baml

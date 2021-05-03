@@ -24,7 +24,7 @@ namespace WPFGOL3
 
     public partial class MainWindow : Window
     {
-        public static GridDef Grid_Def = new GridDef();
+        public GridDef Grid_Def = new GridDef();
 
         public int column = 20;
         public int row = 20;
@@ -58,8 +58,7 @@ namespace WPFGOL3
             this.updateGrid = new int[row, column];
 
 
-            Console.WriteLine($"{row}, {column}");
-            Grid_Def.Close();
+            
             //Grid_Def.Visibility = Visibility.Hidden;
 
             InitializeComponent();
@@ -144,7 +143,8 @@ namespace WPFGOL3
             string exitMessage = "Application is closing, please press OK.";
             string exitTitle = "Application Closing";
             MessageBox.Show(exitMessage, exitTitle);
-            this.Close();
+            //this.Close();
+            Application.Current.Shutdown();
             //Grid_Def.Close();
         }
         private void save(object sender, RoutedEventArgs e)

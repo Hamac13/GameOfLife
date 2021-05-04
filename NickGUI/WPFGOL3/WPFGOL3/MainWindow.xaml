@@ -54,10 +54,10 @@
         <Button x:Name="savingPrivateParts" Grid.Column="0" Click="save" BorderBrush="Black" Padding="10" Margin="0,168,0,-168">Save</Button>
         <Button x:Name="loadingButton" Grid.Column="0" Click="load" BorderBrush="Black" Padding="10" Margin="0,210,0,-210">Load</Button>
         <Button x:Name="exitButton" Grid.Column="0" Click="closeWindow" BorderBrush="Black" Padding="10" Margin="0,252,0,-252">Exit</Button>
-        <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="3" Width="Auto"/>
-        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" VerticalAlignment="Top" Padding="5" Grid.ColumnSpan="2" Grid.Column="2" d:IsHidden="True"/>
-        <Label x:Name="Speed"  Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Grid.Column="4" Margin="0,0,1,0" d:IsHidden="True"/>
-        <TextBox x:Name="speedBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="200"  Padding="5" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="1" BorderBrush="{x:Null}" d:IsHidden="True"/>
+        <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Width="Auto" Margin="10,6,0,0" RenderTransformOrigin="0.8,1.172"/>
+        <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" VerticalAlignment="Top" Padding="5" Margin="176,8,-83,0"/>
+        <Label x:Name="Speed"  Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="299,6,-258,6"/>
+        <TextBox x:Name="speedBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="200"  Padding="5" VerticalAlignment="Center" Grid.ColumnSpan="1" BorderBrush="{x:Null}" Margin="362,6,-300,5"/>
 
         <!--</StackPanel>-->
         <!--<ToolBar>

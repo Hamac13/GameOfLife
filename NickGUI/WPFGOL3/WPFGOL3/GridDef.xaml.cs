@@ -39,7 +39,7 @@ namespace WPFGOL3
             {
                 this.column = (int)slider.Value;
                 this.row = (int)slider.Value;
-                Debug.WriteLine(this.row);
+                //Debug.WriteLine(this.row);
             }
         }
 

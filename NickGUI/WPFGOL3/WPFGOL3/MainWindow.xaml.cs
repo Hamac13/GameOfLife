@@ -318,7 +318,7 @@ namespace WPFGOL3
             val = !val;
             while (val)
             {
-                autoGenerator.Background = Brushes.Orange;
+                AutoGenerator.Background = Brushes.Orange;
 
                 Generate(this, e);
 
@@ -329,11 +329,11 @@ namespace WPFGOL3
                 await Task.Delay(speed);
 
             }
-            autoGenerator.Background = Brushes.LightGray;
+            AutoGenerator.Background = Brushes.LightGray;
 
-
+            
         }
-        private void Load(object sender, RoutedEventArgs e) // runs the loader function, and displays a message box.
+        public void LoadCSV(object sender, RoutedEventArgs e) // runs the loader function, and displays a message box.
         {
             string loadMessage = "The program has loaded the contents of the saved csv";
             string loadTitle = "Loading......................";

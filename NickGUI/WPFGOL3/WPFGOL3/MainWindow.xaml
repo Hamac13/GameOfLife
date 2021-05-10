@@ -46,12 +46,12 @@
         </Grid.ColumnDefinitions>
         <!--<TextBlock x:Name="Placeholder" Grid.Row="0" Grid.Column="0" FontSize="14" FontFamily="Comic Sans MS">E</TextBlock>-->
         <!--<StackPanel>-->
-        <Button x:Name="generator" Grid.Column="0" Click="Generate" BorderBrush="Black" Padding="10" Margin="0,42,0,-42">Generate</Button>
+        <Button x:Name="Generator" Grid.Column="0" Click="Generate" BorderBrush="Black" Padding="10" Margin="0,42,0,-42">Generate</Button>
         <Button x:Name="Reset" Grid.Column="0" Click="ResetGrid" BorderBrush="Black" Padding="10" Margin="0,84,0,-84">Reset</Button>
-        <Button x:Name="autoGenerator" Grid.Column="0" Click="Auto" BorderBrush="Black" Padding="10" Margin="0,126,0,-126">Automatic</Button>
-        <Button x:Name="savingPrivateRyan" Grid.Column="0" Click="Save" BorderBrush="Black" Padding="10" Margin="0,168,0,-168">Save</Button>
-        <Button x:Name="loadingButton" Grid.Column="0" Click="Load" BorderBrush="Black" Padding="10" Margin="0,210,0,-210">Load</Button>
-        <Button x:Name="exitButton" Grid.Column="0" Click="CloseWindow" BorderBrush="Black" Padding="10" Margin="0,252,0,-252">Exit</Button>
+        <Button x:Name="AutoGenerator" Grid.Column="0" Click="Auto" BorderBrush="Black" Padding="10" Margin="0,126,0,-126">Automatic</Button>
+        <Button x:Name="SavingPrivateRyan" Grid.Column="0" Click="Save" BorderBrush="Black" Padding="10" Margin="0,168,0,-168">Save</Button>
+        <Button x:Name="LoadingButton" Grid.Column="0" Click="LoadCSV" BorderBrush="Black" Padding="10" Margin="0,210,0,-210">Load</Button>
+        <Button x:Name="ExitButton" Grid.Column="0" Click="CloseWindow" BorderBrush="Black" Padding="10" Margin="0,252,0,-252">Exit</Button>
         <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Width="Auto" Margin="10,6,0,0" RenderTransformOrigin="0.8,1.172"/>
         <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" VerticalAlignment="Top" Padding="5" Margin="176,8,-83,0"/>
         <Label x:Name="Speed"  Content="{Binding ElementName=Speed_Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="342,11,-203,8"/>

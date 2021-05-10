@@ -1,19 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Threading;
-using System.IO;
 
 namespace WPFGOL3
 {
@@ -26,12 +18,12 @@ namespace WPFGOL3
     {
         public GridDef Grid_Def = new GridDef();
 
-        public int column = 20;
-        public int row = 20;
+        public int column = 20; // the amount of columns on the grid (invalid, as it is being set in another file)
+        public int row = 20; // the amount of rows on the grid (invalid, as it is being set in another file)
 
-        public static int generation = 0;
-        public static int alive = 0;
-        public static int speed = 200;
+        public static int generation = 0; // the amount of generations that have passed, default is 0
+        public static int alive = 0; // the amount of alive cells on the grid, default is 0
+        public static int speed = 200; // the delay. (invalid, as delay is taken from the slider), default is 50.
 
         //Button[,] btnArr = new Button[rows, columns];
         //public static Button[,] btnArr = new Button[row, column];
@@ -39,35 +31,39 @@ namespace WPFGOL3
         //public static int[,] grid = new int[row, column];
         //public static int[,] updateGrid = new int[row, column];
 
-        public int[,] grid;
-        public int[,] updateGrid;
-        Button[,] btnArr;
+        public int[,] grid; // the original grid, that is being set by the user.
+        public int[,] updateGrid; // the grid after it has been checked for adjacencies
+        readonly Button[,] btnArr; // the graphic representation of the grid.
 
-        public static int rowi;
-        public static int columni;
+        readonly SolidColorBrush GridColour = Brushes.SteelBlue; // the variable for the colour of the grid
+        readonly SolidColorBrush AliveColour = Brushes.Firebrick; // the variable for the colour of the alive cells.
 
-        public MainWindow(int row, int column)
+
+        public static int rowi; // an iterated variable for the row for loops
+        public static int columni; // an iterated variable for the column for loops
+
+        public MainWindow(int row, int column) // the mainwindow class, which takes column and row from another files. 
         {
             GridDef Grid_Def = new GridDef();
-            this.row = row;
-            this.column = column;
+            this.row = row; // sets the row variable in this file to that of the row variable from GridDef.xaml.cs
+            this.column = column; // sets the column variable in this file to that of the column variable from GridDef.xaml.cs
 
-            this.btnArr = new Button[row, column];
+            this.btnArr = new Button[row, column]; // sets the size of the button array multidimentional array
 
-            this.grid = new int[row, column];
-            this.updateGrid = new int[row, column];
+            this.grid = new int[row, column]; // sets the size of the initial grid array
+            this.updateGrid = new int[row, column]; // sets the size of the updating grid array
 
 
-            
-            //Grid_Def.Visibility = Visibility.Hidden;
+
+
 
             InitializeComponent();
-            Generations.Content = $"Generation: {generation}";
-            AliveCells.Content = $"Alive: {alive}";
-            
+            Generations.Content = $"Generation: {generation}"; // sets the content of the generation label to that of the current value
+            AliveCells.Content = $"Alive: {alive}"; // sets the content of the AliveCells label to that of the current value
 
 
-            for (columni = 0; columni < column; columni++)
+
+            for (columni = 0; columni < column; columni++) // sets the values on the grids to zero, based on their size.
             {
                 for (rowi = 0; rowi < row; rowi++)
                 {
@@ -80,47 +76,57 @@ namespace WPFGOL3
             //Button[,] btnArr = new Button[20, 20];
 
 
-
-            for (columni = 0; columni < column; columni++)
+            //**
+            for (columni = 0; columni < column; columni++) // sets up the whole auto generated button array.
             {
-                ColumnDefinition colDef = new ColumnDefinition();
-                RowDefinition rowDef = new RowDefinition();
+                
 
                 for (rowi = 0; rowi < row; rowi++)
                 {
 
-                    btnArr[columni, rowi] = new Button();
+                    btnArr[columni, rowi] = new Button
+                    {
+                        Tag = 0,
+                        //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
+                        Background = GridColour,
+                        BorderBrush = Brushes.Black,
+                        BorderThickness = new Thickness(1),
 
-                    btnArr[columni, rowi].Tag = 0;
-                    //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
-                    btnArr[columni, rowi].Background = Brushes.SteelBlue;
-                    btnArr[columni, rowi].BorderBrush = Brushes.Black;
-                    btnArr[columni, rowi].BorderThickness = new Thickness(1);
-
-                    btnArr[columni, rowi].Margin = new Thickness(0.3);
+                        Margin = new Thickness(0.3)
+                    };
 
 
                     Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
                     Grid.SetRow(btnArr[columni, rowi], columni + 1);
                     gridMain.Children.Add(btnArr[columni, rowi]);
 
-                    btnArr[columni, rowi].Click += setState;
+                    btnArr[columni, rowi].Click += SetState;
 
 
                     //Console.WriteLine($"{x},{y}");
 
                 }
-
-                colDef.Width = new GridLength(2, GridUnitType.Star);
-                rowDef.Height = new GridLength(2, GridUnitType.Star);
-                gridMain.RowDefinitions.Add(rowDef);
+                ColumnDefinition colDef = new ColumnDefinition
+                {
+                    Width = new GridLength(2, GridUnitType.Star)
+                };
                 gridMain.ColumnDefinitions.Add(colDef);
+                RowDefinition rowDef = new RowDefinition
+                {
+                    Height = new GridLength(2, GridUnitType.Star)
+                };
+                gridMain.RowDefinitions.Add(rowDef);
+                
             }
-            RowDefinition rowDef2 = new RowDefinition();
-            rowDef2.Height = new GridLength(2, GridUnitType.Star);
+            RowDefinition rowDef2 = new RowDefinition
+            {
+                Height = new GridLength(2, GridUnitType.Star)
+            };
             gridMain.RowDefinitions.Add(rowDef2);
-            ColumnDefinition colDef2 = new ColumnDefinition();
-            colDef2.Width = new GridLength(2, GridUnitType.Star);
+            ColumnDefinition colDef2 = new ColumnDefinition
+            {
+                Width = new GridLength(2, GridUnitType.Star)
+            };
             gridMain.ColumnDefinitions.Add(colDef2);
 
 
@@ -137,21 +143,18 @@ namespace WPFGOL3
             //    }
             //}
         }
-        private void SpeedSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SpeedSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // changes values based on the slider.
         {
-
-            Slider slider = sender as Slider;
-
-            if (slider != null)
+            if (sender is Slider slider)
             {
                 speed = (int)slider.Value;
                 //Debug.WriteLine(this.row);
             }
         }
 
-        private void closeWindow(object sender, RoutedEventArgs e)
+        private void CloseWindow(object sender, RoutedEventArgs e) // closes all current windows when pressed.
         {
-            GridDef Grid_Def = new GridDef();
+
             string exitMessage = "Application is closing, please press OK.";
             string exitTitle = "Application Closing";
             MessageBox.Show(exitMessage, exitTitle);
@@ -159,7 +162,7 @@ namespace WPFGOL3
             Application.Current.Shutdown();
             //Grid_Def.Close();
         }
-        private void save(object sender, RoutedEventArgs e)
+        private void Save(object sender, RoutedEventArgs e) // saves the current grid to a csv
         {
             string message = "Grid Saving (Grid is saved to the current directory of the .exe)";
             string title = "Saving...";
@@ -169,7 +172,7 @@ namespace WPFGOL3
                 ToCsv(grid));
 
         }
-        private /*Tuple<int,int>*/ void setState(object sender, RoutedEventArgs e)
+        private void SetState(object sender, RoutedEventArgs e) // sets the state of the clicked button.
         {
 
             Button _btn = sender as Button;
@@ -181,7 +184,7 @@ namespace WPFGOL3
 
             if (grid[y - 1, x - 1] == 1)
             {
-                btnArr[y - 1, x - 1].Background = Brushes.SteelBlue;
+                btnArr[y - 1, x - 1].Background = GridColour;
                 btnArr[y - 1, x - 1].Tag = 0;
 
 
@@ -191,7 +194,7 @@ namespace WPFGOL3
             }
             else
             {
-                btnArr[y - 1, x - 1].Background = Brushes.Firebrick;
+                btnArr[y - 1, x - 1].Background = AliveColour;
                 btnArr[y - 1, x - 1].Tag = 1;
 
                 grid[y - 1, x - 1] = 1;
@@ -202,7 +205,7 @@ namespace WPFGOL3
 
 
         }
-        public void generate(object sender, RoutedEventArgs e)
+        public void Generate(object sender, RoutedEventArgs e) // runs all of the logic to generate the next generation based on the user input.
         {
             for (int ri = 0; ri < row; ri++)
             {
@@ -212,7 +215,7 @@ namespace WPFGOL3
                 }
             }
 
-            GOLlogic.check(this);
+            GOLlogic.Check(this);
 
             GOLlogic.Iteration(this);
             CheckIf(grid);
@@ -238,11 +241,11 @@ namespace WPFGOL3
                     updateGrid[i, c] = grid[i, c];
                     if (Convert.ToInt32(btnArr[i, c].Tag) >= 1)
                     {
-                        btnArr[i, c].Background = Brushes.Firebrick;
+                        btnArr[i, c].Background = AliveColour;   /// SolidColorBrush squareColor= Brushes.Firebrick;
                     }
                     if (Convert.ToInt32(btnArr[i, c].Tag) == 0)
                     {
-                        btnArr[i, c].Background = Brushes.SteelBlue;
+                        btnArr[i, c].Background = GridColour;
                     }
 
 
@@ -262,7 +265,7 @@ namespace WPFGOL3
 
         }
 
-        public void CheckIf(int[,] array)
+        public void CheckIf(int[,] array) // Checks whether the value of the array used is one, and adds one to the alive variable.
         {
             alive = 0;
             for (int i = 0; i < row; i++)
@@ -288,16 +291,16 @@ namespace WPFGOL3
                   .Select(j => data[i, j])); // simplest, we don't expect ',' and '"' in the items
         }
 
-        private void reset(object sender, RoutedEventArgs e)
+        private void ResetGrid(object sender, RoutedEventArgs e) // resets all values on the display
         {
-            //Console.WriteLine("Fuckin shitty");
+
             for (columni = 0; columni < column; columni++)
             {
                 for (rowi = 0; rowi < row; rowi++)
                 {
                     btnArr[rowi, columni].Tag = 0;
                     //btnArr[rowi, columni].Content = btnArr[rowi, columni].Tag;
-                    btnArr[rowi, columni].Background = Brushes.SteelBlue;
+                    btnArr[rowi, columni].Background = GridColour;
                     updateGrid[rowi, columni] = 0;
                     grid[rowi, columni] = 0;
                 }
@@ -307,8 +310,8 @@ namespace WPFGOL3
             CheckIf(grid);
 
         }
-        public static bool val = false;
-        private async void auto(object sender, RoutedEventArgs e)
+        public static bool val = false; // a value to allow the loop to run until the button is pressed again.
+        private async void Auto(object sender, RoutedEventArgs e) // Runs the program whilst it is toggled, 
         {
 
             val = !val;
@@ -316,11 +319,11 @@ namespace WPFGOL3
             {
                 autoGenerator.Background = Brushes.Orange;
 
-                generate(this, e);
-                
+                Generate(this, e);
+
 
                 int speed = Convert.ToInt32(Speed_Slider.Value);
-                
+
 
                 await Task.Delay(speed);
 
@@ -329,17 +332,17 @@ namespace WPFGOL3
 
 
         }
-        private void load(object sender, RoutedEventArgs e)
+        private void Load(object sender, RoutedEventArgs e) // runs the loader function, and displays a message box.
         {
             string loadMessage = "The program has loaded the contents of the saved csv";
             string loadTitle = "Loading......................";
             MessageBox.Show(loadMessage, loadTitle);
 
 
-            loader(this, e);
+            Loader(this, e);
 
         }
-        public void loader(object sender, RoutedEventArgs e)
+        public void Loader(object sender, RoutedEventArgs e) // Runs code that loads the file and sets the loaded content to a 2d array from a jagged array.
         {
             var curDir = Directory.GetCurrentDirectory();
             var filePath = $"{curDir}/data.csv";
@@ -353,8 +356,7 @@ namespace WPFGOL3
             {
                 for (int i = 0; i < temp1.GetLength(1); i++)
                 {
-                    int number;
-                    bool ok = int.TryParse(temp1[j, i], out number);
+                    bool ok = int.TryParse(temp1[j, i], out int number);
                     if (ok)
                     {
                         second[j, i] = number;
@@ -374,16 +376,16 @@ namespace WPFGOL3
 
                     if (Convert.ToInt32(btnArr[i, c].Tag) >= 1)
                     {
-                        btnArr[i, c].Background = Brushes.Firebrick;
+                        btnArr[i, c].Background = AliveColour;
                     }
                 }
             }
 
-            GOLlogic.check(this);
+            GOLlogic.Check(this);
             CheckIf(grid);
 
         }
-        public static T[,] To2D<T>(T[][] source)
+        public static T[,] To2D<T>(T[][] source) // taken from stackOverflow, used to convert from jagged array to 2D array.
         {
             try
             {
@@ -407,7 +409,7 @@ namespace WPFGOL3
     public class GOLlogic
     {
         public GOLlogic() { }
-        public static void check(MainWindow mainWindow)
+        public static void Check(MainWindow mainWindow)
         {
             for (int ri = 0; ri < mainWindow.row; ri++)
             {

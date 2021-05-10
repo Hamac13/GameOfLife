@@ -21,7 +21,7 @@
             <ColumnDefinition Width="auto"/>
 
         </Grid.ColumnDefinitions>
-        <Button Content="Click to Continue" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="242" Click="closeWindow" Margin="53,68,-174,-60" Grid.Row="2" Height="45" FontSize="24"/>
+        <Button Content="Click to Continue" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="242" Click="CloseWindow" Margin="53,68,-174,-60" Grid.Row="2" Height="45" FontSize="24"/>
         <Slider x:Name="GridSet" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="GridSlider_ValueChanged" Value="{Binding ElementName=RowsCount , Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Minimum="10" Maximum="50" Margin="90,13,-139,0" Grid.Row="2" HorizontalAlignment="Left" Width="164" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="20" Grid.Column="2">
             <Slider.RenderTransform>
                 <TransformGroup>

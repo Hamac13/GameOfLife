@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Diagnostics;
 
 namespace WPFGOL3
 {
@@ -20,34 +8,31 @@ namespace WPFGOL3
     /// </summary>
     public partial class GridDef : Window
     {
-        public int row { get; set; }
-        public int column { get; set; }
+        public int Row { get; set; }
+        public int Column { get; set; }
 
         public GridDef()
         {
             InitializeComponent();
-            
-            
+
+
 
         }
         private void GridSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-
-            Slider slider = sender as Slider;
-
-            if (slider != null)
+            if (sender is Slider slider)
             {
-                this.column = (int)slider.Value;
-                this.row = (int)slider.Value;
+                this.Column = (int)slider.Value;
+                this.Row = (int)slider.Value;
                 //Debug.WriteLine(this.row);
             }
         }
 
 
-        public void closeWindow(object sender, RoutedEventArgs e)
+        public void CloseWindow(object sender, RoutedEventArgs e)
         {
-            
-            MainWindow Main = new MainWindow(row,column);
+
+            MainWindow Main = new MainWindow(Row, Column);
 
 
             Main.Show();

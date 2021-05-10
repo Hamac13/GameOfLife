@@ -31,7 +31,7 @@ namespace WPFGOL3
 
         public static int generation = 0;
         public static int alive = 0;
-
+        public static int speed = 200;
 
         //Button[,] btnArr = new Button[rows, columns];
         //public static Button[,] btnArr = new Button[row, column];
@@ -64,6 +64,7 @@ namespace WPFGOL3
             InitializeComponent();
             Generations.Content = $"Generation: {generation}";
             AliveCells.Content = $"Alive: {alive}";
+            
 
 
             for (columni = 0; columni < column; columni++)
@@ -135,6 +136,17 @@ namespace WPFGOL3
 
             //    }
             //}
+        }
+        private void SpeedSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+            Slider slider = sender as Slider;
+
+            if (slider != null)
+            {
+                speed = (int)slider.Value;
+                //Debug.WriteLine(this.row);
+            }
         }
 
         private void closeWindow(object sender, RoutedEventArgs e)
@@ -305,10 +317,10 @@ namespace WPFGOL3
                 autoGenerator.Background = Brushes.Orange;
 
                 generate(this, e);
+                
 
-
-                int speed = Convert.ToInt32(speedBox.Text);
-
+                int speed = Convert.ToInt32(Speed_Slider.Value);
+                
 
                 await Task.Delay(speed);
 

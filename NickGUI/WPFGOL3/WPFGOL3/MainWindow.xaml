@@ -5,14 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFGOL3"
         mc:Ignorable="d"
-		Width="1440"
-        Height="900"
         Title="Game of Life" 
         FontFamily="Consolas" 
         FontSize="16" 
         SnapsToDevicePixels="True" 
         UseLayoutRounding="True" 
-        WindowStartupLocation="CenterScreen"  Padding="5" 
+        WindowStartupLocation="CenterScreen"  Padding="5" Width="1440" Height="892" 
         >
 
     <Grid Name="gridMain" ShowGridLines="False" Margin="10" UseLayoutRounding="True" ClipToBounds="True">
@@ -56,8 +54,9 @@
         <Button x:Name="exitButton" Grid.Column="0" Click="closeWindow" BorderBrush="Black" Padding="10" Margin="0,252,0,-252">Exit</Button>
         <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Padding="5" Width="Auto" Margin="10,6,0,0" RenderTransformOrigin="0.8,1.172"/>
         <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" VerticalAlignment="Top" Padding="5" Margin="176,8,-83,0"/>
-        <Label x:Name="Speed"  Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="299,6,-258,6"/>
-        <TextBox x:Name="speedBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="200"  Padding="5" VerticalAlignment="Center" Grid.ColumnSpan="1" BorderBrush="{x:Null}" Margin="362,6,-300,5"/>
+        <Label x:Name="Speed"  Content="{Binding ElementName=Speed_Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="342,11,-203,8"/>
+        <Slider x:Name="Speed_Slider" TickFrequency="10" IsSnapToTickEnabled="True" Minimum="50" Maximum="300" ValueChanged="SpeedSlider_ValueChanged" Value="{Binding ElementName=Speed , Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="382,19,-403,0" Width="180"/>
+        <Label x:Name="Speed_Proper"  Content="Speed:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="274,10,-182,7"/>
 
         <!--</StackPanel>-->
         <!--<ToolBar>

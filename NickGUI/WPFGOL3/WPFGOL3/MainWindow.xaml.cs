@@ -79,7 +79,7 @@ namespace WPFGOL3
             //**
             for (columni = 0; columni < column; columni++) // sets up the whole auto generated button array.
             {
-                
+
 
                 for (rowi = 0; rowi < row; rowi++)
                 {
@@ -116,7 +116,7 @@ namespace WPFGOL3
                     Height = new GridLength(2, GridUnitType.Star)
                 };
                 gridMain.RowDefinitions.Add(rowDef);
-                
+
             }
             RowDefinition rowDef2 = new RowDefinition
             {
@@ -172,6 +172,7 @@ namespace WPFGOL3
                 ToCsv(grid));
 
         }
+
         private void SetState(object sender, RoutedEventArgs e) // sets the state of the clicked button.
         {
 

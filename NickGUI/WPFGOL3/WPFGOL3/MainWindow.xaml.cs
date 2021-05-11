@@ -407,6 +407,17 @@ namespace WPFGOL3
 
 
             Loader(this, e);
+            if (Alive != 0)
+            {
+                this.Generator.IsEnabled = true;
+                this.AutoGenerator.IsEnabled = true;
+            }
+            else
+            {
+                this.Generator.IsEnabled = false;
+                this.AutoGenerator.IsEnabled = false;
+                Val = false;
+            }
 
         }
         public void Loader(object sender, RoutedEventArgs e) // Runs code that loads the file and sets the loaded content to a 2d array from a jagged array.

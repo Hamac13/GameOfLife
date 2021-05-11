@@ -27,7 +27,7 @@ namespace WPFGOL3
 
 
         }
-        private void GridSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void GridSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // This controls the value of the grid size label taken from the slider.
         {
             if (sender is Slider slider)
             {
@@ -38,7 +38,7 @@ namespace WPFGOL3
         }
 
 
-        public void CloseWindow(object sender, RoutedEventArgs e)
+        public void CloseWindow(object sender, RoutedEventArgs e) // this closes the window when the click to continue button is pressed. It opens the main grid.
         {
 
             MainWindow Main = new MainWindow(Row, Column, GetAliveColour, GetGridColour);
@@ -53,19 +53,23 @@ namespace WPFGOL3
 
         }
 
-        public void GridColourSet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void GridColourSet_SelectionChanged(object sender, SelectionChangedEventArgs e) // Controls the colour of the grid and the previews.
         {
             
             
-            if (GridColourSet.SelectedItem == Default)
+            if (GridColourSet.SelectedItem == Default) // The default theme
             {
                 //Debug.WriteLine("test");
                 this.GetAliveColour = Brushes.Firebrick;
                 this.GetGridColour = Brushes.SteelBlue;
-                
-
+                //if (GetGridColour == Brushes.SteelBlue && GetAliveColour == Brushes.Firebrick)
+                //{
+                //    ActiveCell.Fill = Brushes.Firebrick;
+                //    BackgroundColour.Fill = Brushes.SteelBlue;
+                //}
+                // The above statement does not work, as for whatever reason the rectangles that are being filled will return null
             }
-            if (GridColourSet.SelectedItem == Inverted)
+            if (GridColourSet.SelectedItem == Inverted) // The default theme, but inverted.
             {
                 this.GetAliveColour = Brushes.SteelBlue;
                 this.GetGridColour = Brushes.Firebrick;
@@ -75,7 +79,7 @@ namespace WPFGOL3
                     BackgroundColour.Fill = Brushes.Firebrick;
                 }
             }
-            if(GridColourSet.SelectedItem == Lite)
+            if(GridColourSet.SelectedItem == Lite) // The lite theme, a lighter version of the default
             {
                 this.GetAliveColour = Brushes.IndianRed;
                 this.GetGridColour = Brushes.LightSteelBlue;
@@ -85,7 +89,7 @@ namespace WPFGOL3
                     BackgroundColour.Fill = Brushes.LightSteelBlue;
                 }
             }
-            if(GridColourSet.SelectedItem == LiteInverted)
+            if(GridColourSet.SelectedItem == LiteInverted) // The lite theme, but inverted.
             {
 
                 this.GetAliveColour = Brushes.LightSteelBlue;

@@ -60,7 +60,7 @@ namespace WPFGOL3
 
             this.Grid = new int[row, column]; // sets the size of the initial grid array
             this.UpdateGrid = new int[row, column]; // sets the size of the updating grid array
-            
+
 
 
 
@@ -209,7 +209,7 @@ namespace WPFGOL3
                 Grid[y - 1, x - 1] = 1;
                 btnArr[y - 1, x - 1].Tag = Grid[y - 1, x - 1];
             }
-            
+
             CheckIf(Grid);
 
             if (Alive != 0)
@@ -372,7 +372,7 @@ namespace WPFGOL3
 
             Val = !Val;
 
-            if(Generation == 0)
+            if (Generation == 0)
             {
                 var curDir = Directory.GetCurrentDirectory();
                 File.WriteAllLines($"{curDir}/data.csv",
@@ -394,7 +394,7 @@ namespace WPFGOL3
             }
             AutoGenerator.Background = Brushes.LightGray;
 
-            
+
         }
         public void LoadCSV(object sender, RoutedEventArgs e) // runs the loader function, and displays a message box.
         {

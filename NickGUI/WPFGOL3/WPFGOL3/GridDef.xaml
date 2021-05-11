@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFGOL3"
         mc:Ignorable="d" 
         
-        Title="GridDef" Height="164.515" Width="358.047" Background="Gray" FontFamily="Consolas"
+        Title="GridDef" Height="165" Width="360" Background="Gray" FontFamily="Consolas" WindowStartupLocation="CenterScreen"
         >
     <Grid>
         <Grid.RowDefinitions>
@@ -21,8 +21,8 @@
             <ColumnDefinition Width="auto"/>
 
         </Grid.ColumnDefinitions>
-        <Button Content="Click to Continue" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="242" Click="CloseWindow" Margin="53,68,-174,-60" Grid.Row="2" Height="45" FontSize="24"/>
-        <Slider x:Name="GridSet" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="GridSlider_ValueChanged" Value="{Binding ElementName=RowsCount , Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Minimum="10" Maximum="50" Margin="90,13,-139,0" Grid.Row="2" HorizontalAlignment="Left" Width="164" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="20" Grid.Column="2">
+        <Button Content="Click to Continue" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="240" Click="CloseWindow" Margin="50,70,-175,-60" Grid.Row="2" Height="45" FontSize="24"/>
+        <Slider x:Name="GridSet" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="GridSlider_ValueChanged" Value="{Binding ElementName=RowsCount , Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Minimum="10" Maximum="50" Margin="90,15,-140,0" Grid.Row="2" HorizontalAlignment="Left" Width="165" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="20" Grid.Column="2">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="2" ScaleY="2"/>
@@ -33,10 +33,10 @@
             </Slider.RenderTransform>
         </Slider>
 
-        <Label x:Name="RowsCount"  Content="{Binding ElementName=GridSet, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="215,27,-131,-10" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" Height="43" Width="44" FontSize="24"/>
+        <Label x:Name="RowsCount"  Content="{Binding ElementName=GridSet, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="215,30,-130,-10" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" Height="40" Width="40" FontSize="24"/>
 
 
-        <Label x:Name="GridSize" Content="Grid Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" Margin="78,27,-87,-8" Height="41" Width="137" FontSize="24"/>
+        <Label x:Name="GridSize" Content="Grid Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" Margin="80,30,-90,-10" Height="40" Width="140" FontSize="24"/>
 
     </Grid>
 

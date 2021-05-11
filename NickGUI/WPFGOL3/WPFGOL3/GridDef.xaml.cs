@@ -15,11 +15,15 @@ namespace WPFGOL3
         public int Column { get; set; }
         public SolidColorBrush GetAliveColour { get; set; }
         public SolidColorBrush GetGridColour { get; set; }
+        
 
         public GridDef()
         {
             InitializeComponent();
-
+            SolidColorBrush CurrentActiveCell = GetAliveColour;
+            SolidColorBrush CurrentBackground = GetGridColour;
+            BackgroundColour.Fill = CurrentBackground;
+            ActiveCell.Fill = CurrentActiveCell;
 
 
         }
@@ -49,20 +53,55 @@ namespace WPFGOL3
 
         }
 
-        private void GridColourSet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void GridColourSet_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
+            
             if (GridColourSet.SelectedItem == Default)
             {
                 //Debug.WriteLine("test");
                 this.GetAliveColour = Brushes.Firebrick;
                 this.GetGridColour = Brushes.SteelBlue;
+                
+
             }
             if (GridColourSet.SelectedItem == Inverted)
             {
                 this.GetAliveColour = Brushes.SteelBlue;
                 this.GetGridColour = Brushes.Firebrick;
+                if (GetGridColour == Brushes.Firebrick && GetAliveColour == Brushes.SteelBlue)
+                {
+                    ActiveCell.Fill = Brushes.SteelBlue;
+                    BackgroundColour.Fill = Brushes.Firebrick;
+                }
             }
+            if(GridColourSet.SelectedItem == Lite)
+            {
+                this.GetAliveColour = Brushes.IndianRed;
+                this.GetGridColour = Brushes.LightSteelBlue;
+                if (GetGridColour == Brushes.LightSteelBlue && GetAliveColour == Brushes.IndianRed)
+                {
+                    ActiveCell.Fill = Brushes.IndianRed;
+                    BackgroundColour.Fill = Brushes.LightSteelBlue;
+                }
+            }
+            if(GridColourSet.SelectedItem == LiteInverted)
+            {
+
+                this.GetAliveColour = Brushes.LightSteelBlue;
+                this.GetGridColour = Brushes.IndianRed;
+                if(GetGridColour == Brushes.IndianRed && GetAliveColour == Brushes.LightSteelBlue)
+                {
+                    ActiveCell.Fill = Brushes.LightSteelBlue;
+                    BackgroundColour.Fill = Brushes.IndianRed;
+                }
+                
+            }
+            
+            
         }
+
+        
 
         //private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
         //{

@@ -35,14 +35,14 @@ namespace WPFGOL3
         public int[,] UpdateGrid; // the grid after it has been checked for adjacencies
         public readonly Button[,] btnArr; // the graphic representation of the grid.
 
-        public readonly SolidColorBrush GridColour = Brushes.SteelBlue; // the variable for the colour of the grid
-        public readonly SolidColorBrush AliveColour = Brushes.Firebrick; // the variable for the colour of the alive cells.
+        public SolidColorBrush GridColour = Brushes.SteelBlue; // the variable for the colour of the grid
+        public SolidColorBrush AliveColour = Brushes.Firebrick; // the variable for the colour of the alive cells.
 
 
         public static int Rowi; // an iterated variable for the row for loops
         public static int Columni; // an iterated variable for the column for loops
 
-        public MainWindow(int row, int column) // the mainwindow class, which takes column and row from another files. 
+        public MainWindow(int row, int column, SolidColorBrush AliveColour, SolidColorBrush GridColour) // the mainwindow class, which takes column and row from another files. 
         {
             GridDef Grid_Def = new GridDef();
 
@@ -55,6 +55,9 @@ namespace WPFGOL3
 
             this.Row = row; // sets the row variable in this file to that of the row variable from GridDef.xaml.cs
             this.Column = column; // sets the column variable in this file to that of the column variable from GridDef.xaml.cs
+
+            this.GridColour = GridColour;
+            this.AliveColour = AliveColour;
 
             this.btnArr = new Button[row, column]; // sets the size of the button array multidimentional array
 

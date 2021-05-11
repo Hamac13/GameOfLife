@@ -1,5 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Diagnostics;
+using System;
 
 namespace WPFGOL3
 {
@@ -10,6 +13,8 @@ namespace WPFGOL3
     {
         public int Row { get; set; }
         public int Column { get; set; }
+        public SolidColorBrush GetAliveColour { get; set; }
+        public SolidColorBrush GetGridColour { get; set; }
 
         public GridDef()
         {
@@ -32,7 +37,7 @@ namespace WPFGOL3
         public void CloseWindow(object sender, RoutedEventArgs e)
         {
 
-            MainWindow Main = new MainWindow(Row, Column);
+            MainWindow Main = new MainWindow(Row, Column, GetAliveColour, GetGridColour);
 
 
             Main.Show();
@@ -43,6 +48,44 @@ namespace WPFGOL3
 
 
         }
+
+        private void GridColourSet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GridColourSet.SelectedItem == Default)
+            {
+                //Debug.WriteLine("test");
+                this.GetAliveColour = Brushes.Firebrick;
+                this.GetGridColour = Brushes.SteelBlue;
+            }
+            if (GridColourSet.SelectedItem == Inverted)
+            {
+                this.GetAliveColour = Brushes.SteelBlue;
+                this.GetGridColour = Brushes.Firebrick;
+            }
+        }
+
+        //private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        //{
+
+
+        //    ComboBoxItem typeItem = (ComboBoxItem)GridColourSet.SelectedItem;
+        //    string value = Convert.ToString(typeItem);
+        //    Debug.WriteLine(value);
+        //    if (GridColourSet.SelectedItem == Default)
+        //    {
+        //        this.GetGridColour = Brushes.SteelBlue;
+        //        this.GetAliveColour = Brushes.Firebrick;
+        //        //Debug.WriteLine("test");
+        //        Console.WriteLine(value);
+        //    }
+        //    if (GridColourSet.SelectedItem == Inverted)
+        //    {
+        //        this.GetGridColour = Brushes.Firebrick;
+        //        this.GetAliveColour = Brushes.SteelBlue;
+        //    }
+        //}
+
+
 
         //private void setRow(object sender, RoutedEventArgs e)
         //{

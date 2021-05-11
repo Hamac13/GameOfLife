@@ -65,3 +65,7 @@ C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOf
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\GridDef.g.cs
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\GridDef.baml
 C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\WPFGOL3.csprojAssemblyReference.cache
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\Opening.g.cs
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\Opening.baml
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\Rules.g.cs
+C:\Users\n.a.russell\Documents\Documents\Yr13 2021\CompSci\GitHub\Hamac13\GameOfLife\NickGUI\WPFGOL3\WPFGOL3\obj\Debug\Rules.baml

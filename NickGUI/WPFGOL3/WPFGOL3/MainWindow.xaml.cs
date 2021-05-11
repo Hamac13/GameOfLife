@@ -33,18 +33,26 @@ namespace WPFGOL3
 
         public int[,] Grid; // the original grid, that is being set by the user.
         public int[,] UpdateGrid; // the grid after it has been checked for adjacencies
-        readonly Button[,] btnArr; // the graphic representation of the grid.
+        public readonly Button[,] btnArr; // the graphic representation of the grid.
 
-        readonly SolidColorBrush GridColour = Brushes.SteelBlue; // the variable for the colour of the grid
-        readonly SolidColorBrush AliveColour = Brushes.Firebrick; // the variable for the colour of the alive cells.
+        public readonly SolidColorBrush GridColour = Brushes.SteelBlue; // the variable for the colour of the grid
+        public readonly SolidColorBrush AliveColour = Brushes.Firebrick; // the variable for the colour of the alive cells.
 
 
-        public static int rowi; // an iterated variable for the row for loops
-        public static int columni; // an iterated variable for the column for loops
+        public static int Rowi; // an iterated variable for the row for loops
+        public static int Columni; // an iterated variable for the column for loops
 
         public MainWindow(int row, int column) // the mainwindow class, which takes column and row from another files. 
         {
             GridDef Grid_Def = new GridDef();
+
+            this.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.9);
+            this.Width = this.Height;
+            this.MaxHeight = (System.Windows.SystemParameters.PrimaryScreenHeight);
+            this.MaxWidth = (System.Windows.SystemParameters.PrimaryScreenWidth);
+            this.MinHeight = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.7);
+            this.MinWidth = this.MinHeight;
+
             this.Row = row; // sets the row variable in this file to that of the row variable from GridDef.xaml.cs
             this.Column = column; // sets the column variable in this file to that of the column variable from GridDef.xaml.cs
 
@@ -52,7 +60,7 @@ namespace WPFGOL3
 
             this.Grid = new int[row, column]; // sets the size of the initial grid array
             this.UpdateGrid = new int[row, column]; // sets the size of the updating grid array
-
+            
 
 
 
@@ -63,12 +71,12 @@ namespace WPFGOL3
             Speed_Slider.Value = 200;
 
 
-            for (columni = 0; columni < column; columni++) // sets the values on the grids to zero, based on their size.
+            for (Columni = 0; Columni < column; Columni++) // sets the values on the grids to zero, based on their size.
             {
-                for (rowi = 0; rowi < row; rowi++)
+                for (Rowi = 0; Rowi < row; Rowi++)
                 {
-                    Grid[rowi, columni] = 0;
-                    UpdateGrid[rowi, columni] = 0;
+                    Grid[Rowi, Columni] = 0;
+                    UpdateGrid[Rowi, Columni] = 0;
                 }
             }
 
@@ -77,31 +85,31 @@ namespace WPFGOL3
 
 
             //**
-            for (columni = 0; columni < column; columni++) // sets up the whole auto generated button array.
+            for (Columni = 0; Columni < column; Columni++) // sets up the whole auto generated button array.
             {
 
 
-                for (rowi = 0; rowi < row; rowi++)
+                for (Rowi = 0; Rowi < row; Rowi++)
                 {
 
-                    btnArr[columni, rowi] = new Button
+                    btnArr[Columni, Rowi] = new Button
                     {
                         Tag = 0,
                         //btnArr[columni, rowi].Content = btnArr[columni, rowi].Tag;
                         Background = GridColour,
                         BorderBrush = Brushes.Black,
-                        BorderThickness = new Thickness(1),
+                        BorderThickness = new Thickness(0),
 
-                        Margin = new Thickness(0.3)
+                        Margin = new Thickness(0.75)
                     };
 
 
-                    System.Windows.Controls.Grid.SetColumn(btnArr[columni, rowi], rowi + 1);
-                    System.Windows.Controls.Grid.SetRow(btnArr[columni, rowi], columni + 1);
-                    gridMain.Children.Add(btnArr[columni, rowi]);
+                    System.Windows.Controls.Grid.SetColumn(btnArr[Columni, Rowi], Rowi + 1);
+                    System.Windows.Controls.Grid.SetRow(btnArr[Columni, Rowi], Columni + 1);
+                    gridMain.Children.Add(btnArr[Columni, Rowi]);
 
-                    btnArr[columni, rowi].Click += SetState;
-
+                    btnArr[Columni, Rowi].Click += SetState;
+                    //this.Height = 900;
 
                     //Console.WriteLine($"{x},{y}");
 
@@ -116,7 +124,7 @@ namespace WPFGOL3
                     Height = new GridLength(2, GridUnitType.Star)
                 };
                 gridMain.RowDefinitions.Add(rowDef);
-
+                //this.Width = 900;
             }
             RowDefinition rowDef2 = new RowDefinition
             {
@@ -201,9 +209,20 @@ namespace WPFGOL3
                 Grid[y - 1, x - 1] = 1;
                 btnArr[y - 1, x - 1].Tag = Grid[y - 1, x - 1];
             }
-            //return Tuple.Create(x, y);
+            
             CheckIf(Grid);
 
+            if (Alive != 0)
+            {
+                this.Generator.IsEnabled = true;
+                this.AutoGenerator.IsEnabled = true;
+            }
+            else
+            {
+                this.Generator.IsEnabled = false;
+                this.AutoGenerator.IsEnabled = false;
+                Val = false;
+            }
 
         }
         public void Generate(object sender, RoutedEventArgs e) // runs all of the logic to generate the next generation based on the user input.
@@ -225,6 +244,18 @@ namespace WPFGOL3
             Generation++;
             Generations.Content = $"Generation: {Generation}";
 
+            if (Alive != 0)
+            {
+                this.Generator.IsEnabled = true;
+                this.AutoGenerator.IsEnabled = true;
+            }
+            else
+            {
+                this.Generator.IsEnabled = false;
+                this.AutoGenerator.IsEnabled = false;
+                Val = false;
+            }
+
             //GOLlogic.PrintGrid(grid);
 
             //GOLlogic.Iteration();
@@ -242,7 +273,7 @@ namespace WPFGOL3
                     UpdateGrid[i, c] = Grid[i, c];
                     if (Convert.ToInt32(btnArr[i, c].Tag) >= 1)
                     {
-                        btnArr[i, c].Background = AliveColour;   /// SolidColorBrush squareColor= Brushes.Firebrick;
+                        btnArr[i, c].Background = AliveColour;   // SolidColorBrush squareColor= Brushes.Firebrick;
                     }
                     if (Convert.ToInt32(btnArr[i, c].Tag) == 0)
                     {
@@ -253,6 +284,7 @@ namespace WPFGOL3
 
                 }
             }
+
 
             //Button _btn = sender as Button;
             //int y = (int)_btn.GetValue(Grid.RowProperty);
@@ -283,6 +315,17 @@ namespace WPFGOL3
                 }
             }
         }
+        private void ShowRules(object sender, RoutedEventArgs e)
+        {
+            Rules nW = new Rules();
+            nW.Show();
+        }
+        private void GridSize_Click(object sender, RoutedEventArgs e)
+        {
+            GridDef sW = new GridDef();
+            sW.Show();
+            this.Close();
+        }
 
         public static IEnumerable<String> ToCsv<T>(T[,] data, string separator = ",") //borrowed from StackOverflow
         {
@@ -295,21 +338,32 @@ namespace WPFGOL3
         private void ResetGrid(object sender, RoutedEventArgs e) // resets all values on the display
         {
 
-            for (columni = 0; columni < Column; columni++)
+            for (Columni = 0; Columni < Column; Columni++)
             {
-                for (rowi = 0; rowi < Row; rowi++)
+                for (Rowi = 0; Rowi < Row; Rowi++)
                 {
-                    btnArr[rowi, columni].Tag = 0;
+                    btnArr[Rowi, Columni].Tag = 0;
                     //btnArr[rowi, columni].Content = btnArr[rowi, columni].Tag;
-                    btnArr[rowi, columni].Background = GridColour;
-                    UpdateGrid[rowi, columni] = 0;
-                    Grid[rowi, columni] = 0;
+                    btnArr[Rowi, Columni].Background = GridColour;
+                    UpdateGrid[Rowi, Columni] = 0;
+                    Grid[Rowi, Columni] = 0;
                 }
             }
             Generation = 0;
             Generations.Content = $"Generation: {Generation}";
             Speed_Slider.Value = 200;
             CheckIf(Grid);
+            if (Alive != 0)
+            {
+                this.Generator.IsEnabled = true;
+                this.AutoGenerator.IsEnabled = true;
+            }
+            else
+            {
+                this.Generator.IsEnabled = false;
+                this.AutoGenerator.IsEnabled = false;
+                Val = false;
+            }
 
         }
         public static bool Val = false; // a value to allow the loop to run until the button is pressed again.
@@ -317,6 +371,14 @@ namespace WPFGOL3
         {
 
             Val = !Val;
+
+            if(Generation == 0)
+            {
+                var curDir = Directory.GetCurrentDirectory();
+                File.WriteAllLines($"{curDir}/data.csv",
+                    ToCsv(Grid));
+            }
+
             while (Val)
             {
                 AutoGenerator.Background = Brushes.Orange;

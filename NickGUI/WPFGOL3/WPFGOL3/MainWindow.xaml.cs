@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Diagnostics;
 
 namespace WPFGOL3
 {
@@ -318,11 +319,23 @@ namespace WPFGOL3
                 }
             }
         }
+        
         private void ShowRules(object sender, RoutedEventArgs e)
         {
             Rules nW = new Rules();
-            nW.Show();
+            nW.ShowDialog();
+            
+            
+            
+
+
+
+
+
+
+
         }
+        
         private void GridSize_Click(object sender, RoutedEventArgs e)
         {
             GridDef sW = new GridDef();
@@ -404,9 +417,10 @@ namespace WPFGOL3
             string loadMessage = "The program has loaded the contents of the saved csv";
             string loadTitle = "Loading......................";
             MessageBox.Show(loadMessage, loadTitle);
+            var curDir = Directory.GetCurrentDirectory();
+            var filePath = $"{curDir}/data.csv";
 
-
-            Loader(this, e);
+            Loader(this, e, filePath);
             if (Alive != 0)
             {
                 this.Generator.IsEnabled = true;
@@ -420,10 +434,10 @@ namespace WPFGOL3
             }
 
         }
-        public void Loader(object sender, RoutedEventArgs e) // Runs code that loads the file and sets the loaded content to a 2d array from a jagged array.
+        public void Loader(object sender, RoutedEventArgs e, string filePath) // Runs code that loads the file and sets the loaded content to a 2d array from a jagged array.
         {
-            var curDir = Directory.GetCurrentDirectory();
-            var filePath = $"{curDir}/data.csv";
+            //var curDir = Directory.GetCurrentDirectory();
+            //var filePath = $"{curDir}/data.csv";
             string[][] temp = File.ReadLines(filePath)
                           .Select(line => line.Split(','))
                           .ToArray();
@@ -483,6 +497,28 @@ namespace WPFGOL3
             }
         }
 
+        private void Spinny_Click(object sender, RoutedEventArgs e)
+        {
+            string spinnyTitle = "yOu HaVe AcHiEvEd SpInNy";
+            string spinnyText = "tHe LoRd HaTh PrOvIdEd ThEe WiTh SPINNY (spinny has been loaded)";
+            MessageBox.Show(spinnyText, spinnyTitle);
+            var curDir = Directory.GetCurrentDirectory();
+            Speed_Slider.Value = 50;
+            var filePath = $"{curDir}/spinny.csv";
+            Loader(this, e, filePath);
+            CheckIf(Grid);
+            if (Alive != 0)
+            {
+                this.Generator.IsEnabled = true;
+                this.AutoGenerator.IsEnabled = true;
+            }
+            else
+            {
+                this.Generator.IsEnabled = false;
+                this.AutoGenerator.IsEnabled = false;
+                Val = false;
+            }
+        }
     }
     public class GOLlogic
     {

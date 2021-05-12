@@ -8,6 +8,8 @@
         Background="Gray"
         FontFamily="Consolas"
         FontSize="16"
+        
+        WindowStartupLocation="CenterScreen"
         Title="Rules" Height="408.762" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>

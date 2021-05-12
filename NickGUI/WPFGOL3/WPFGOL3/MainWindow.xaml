@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Game of Life" 
         FontFamily="Consolas" 
-        FontSize="16" 
+        FontSize="18" 
         SnapsToDevicePixels="True" 
         UseLayoutRounding="True" 
         WindowStartupLocation="CenterScreen"  Padding="5" Width="1440" Height="900" Background="Gray"
@@ -54,9 +54,9 @@
         <Button x:Name="ExitButton" Grid.Column="0" Click="CloseWindow" BorderBrush="Black" Padding="10,15" Margin="0,400,10,-400" VerticalAlignment="Center">Exit</Button>
         <Label x:Name="Generations" Content="" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Padding="5" Width="Auto" Margin="10,5,0,0" RenderTransformOrigin="0.8,1.172"/>
         <Label x:Name="AliveCells" Content="" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" VerticalAlignment="Center" Padding="5" Margin="180,5,-83,0"/>
-        <Label x:Name="Speed"  Content="{Binding ElementName=Speed_Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="342,5,-203,0"/>
-        <Slider x:Name="Speed_Slider" TickFrequency="10" IsSnapToTickEnabled="True" Minimum="50" Maximum="300" ValueChanged="SpeedSlider_ValueChanged" Value="{Binding ElementName=Speed , Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="382,5,-403,0" Width="180"/>
-        <Label x:Name="Speed_Proper"  Content="Delay:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="274,5,-182,0"/>
+        <Label x:Name="Speed"  Content="{Binding ElementName=Speed_Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="455,5,-314,0"/>
+        <Slider x:Name="Speed_Slider" TickFrequency="10" IsSnapToTickEnabled="True" Minimum="50" Maximum="300" ValueChanged="SpeedSlider_ValueChanged" Value="{Binding ElementName=Speed , Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="495,5,-504,0" Width="180"/>
+        <Label x:Name="Speed_Proper"  Content="Delay:" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="Auto" Padding="5" Grid.ColumnSpan="1" Margin="387,5,-285,0"/>
         <Button x:Name="Rules" Grid.Column="0" Click="ShowRules" BorderBrush="Black" Padding="10,15" Margin="0,300,10,-300" Content="Rules" VerticalAlignment="Center"/>
         <Button x:Name="GridSet" Grid.Column="0" Click="GridSize_Click" BorderBrush="Black" Padding="10,15" Margin="0,350,10,-350" Content="Grid Size" VerticalAlignment="Center"/>
 
